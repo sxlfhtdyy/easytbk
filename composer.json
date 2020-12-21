@@ -39,7 +39,7 @@
             "Dml\\EasyTBK\\TaoBao\\": "src/taobao",
             "Dml\\EasyTBK\\JingDong\\": "src/jingdong",
             "Dml\\EasyTBK\\SuNing\\": "src/suning",
-            "Dml\\EasyTBK\\Vip\\": "src/vip",
+            "Dml\\EasyTBK\\Vip\\": "src/vip"
         },
         "files": [
             "src/helper.php"
