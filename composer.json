@@ -39,7 +39,12 @@
             "Dml\\EasyTBK\\TaoBao\\": "src/taobao",
             "Dml\\EasyTBK\\JingDong\\": "src/jingdong",
             "Dml\\EasyTBK\\SuNing\\": "src/suning",
-            "Dml\\EasyTBK\\Vip\\": "src/vip"
+            "Dml\\EasyTBK\\Vip\\": "src/vip",
+            "Dml\\EasyTBK\\PinDuoDuo\\Request\\": "src/pinduoduo/request",
+            "Dml\\EasyTBK\\TaoBao\\Request\\": "src/taobao/request",
+            "Dml\\EasyTBK\\JingDong\\Request\\": "src/jingdong/request",
+            "Dml\\EasyTBK\\SuNing\\Request\\": "src/suning/request",
+            "Dml\\EasyTBK\\Vip\\Request\\": "src/vip/request"
         },
         "files": [
             "src/helper.php"
