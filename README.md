@@ -8,7 +8,7 @@
 1、安装扩展包
 
 ```bash
-composer require yeardley/easytbk
+composer require dml/easytbk
 ```
 
 
