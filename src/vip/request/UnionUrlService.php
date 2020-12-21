@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 interface UnionUrlServiceIf
 {
@@ -24,13 +24,13 @@ interface UnionUrlServiceIf
 
     public function healthCheck();
 
-    public function vipLinkCheck(\YearDley\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq);
+    public function vipLinkCheck(\Dml\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq);
 
-    public function vipLinkCheckWithOuth(\YearDley\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq);
+    public function vipLinkCheckWithOuth(\Dml\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq);
 
 }
 
-class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub implements \YearDley\EasyTBK\Vip\Request\UnionUrlServiceIf
+class _UnionUrlServiceClient extends \Dml\EasyTBK\Vip\Osp\Base\OspStub implements \Dml\EasyTBK\Vip\Request\UnionUrlServiceIf
 {
 
     public function __construct()
@@ -51,7 +51,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     {
 
         $this->initInvocation("genByGoodsId");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByGoodsId_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByGoodsId_args();
 
         $args->goodsIdList = $goodsIdList;
 
@@ -65,7 +65,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_genByGoodsId()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByGoodsId_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByGoodsId_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -86,7 +86,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     {
 
         $this->initInvocation("genByGoodsIdWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_args();
 
         $args->goodsIdList = $goodsIdList;
 
@@ -102,7 +102,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_genByGoodsIdWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -123,7 +123,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     {
 
         $this->initInvocation("genByVIPUrl");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrl_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrl_args();
 
         $args->urlList = $urlList;
 
@@ -137,7 +137,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_genByVIPUrl()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrl_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrl_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -158,7 +158,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     {
 
         $this->initInvocation("genByVIPUrlWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrlWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrlWithOauth_args();
 
         $args->urlList = $urlList;
 
@@ -172,7 +172,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_genByVIPUrlWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrlWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrlWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -193,7 +193,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     {
 
         $this->initInvocation("healthCheck");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_healthCheck_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_healthCheck_args();
 
         $this->send_base($args);
     }
@@ -201,7 +201,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_healthCheck()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_healthCheck_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_healthCheck_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -211,18 +211,18 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     }
 
 
-    public function vipLinkCheck(\YearDley\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
+    public function vipLinkCheck(\Dml\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
     {
 
         $this->send_vipLinkCheck($vipLinkCheckReq);
         return $this->recv_vipLinkCheck();
     }
 
-    public function send_vipLinkCheck(\YearDley\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
+    public function send_vipLinkCheck(\Dml\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
     {
 
         $this->initInvocation("vipLinkCheck");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheck_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheck_args();
 
         $args->vipLinkCheckReq = $vipLinkCheckReq;
 
@@ -232,7 +232,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_vipLinkCheck()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheck_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheck_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -242,18 +242,18 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     }
 
 
-    public function vipLinkCheckWithOuth(\YearDley\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
+    public function vipLinkCheckWithOuth(\Dml\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
     {
 
         $this->send_vipLinkCheckWithOuth($vipLinkCheckReq);
         return $this->recv_vipLinkCheckWithOuth();
     }
 
-    public function send_vipLinkCheckWithOuth(\YearDley\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
+    public function send_vipLinkCheckWithOuth(\Dml\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq)
     {
 
         $this->initInvocation("vipLinkCheckWithOuth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheckWithOuth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheckWithOuth_args();
 
         $args->vipLinkCheckReq = $vipLinkCheckReq;
 
@@ -263,7 +263,7 @@ class _UnionUrlServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_vipLinkCheckWithOuth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheckWithOuth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheckWithOuth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -385,7 +385,7 @@ class UnionUrlService_genByGoodsId_args
 
         if (!is_array($this->goodsIdList)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $output->writeListBegin();
@@ -530,7 +530,7 @@ class UnionUrlService_genByGoodsIdWithOauth_args
 
         if (!is_array($this->goodsIdList)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $output->writeListBegin();
@@ -675,7 +675,7 @@ class UnionUrlService_genByVIPUrl_args
 
         if (!is_array($this->urlList)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $output->writeListBegin();
@@ -820,7 +820,7 @@ class UnionUrlService_genByVIPUrlWithOauth_args
 
         if (!is_array($this->urlList)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $output->writeListBegin();
@@ -939,7 +939,7 @@ class UnionUrlService_vipLinkCheck_args
         if (true) {
 
 
-            $this->vipLinkCheckReq = new \YearDley\EasyTBK\Vip\Request\VipLinkCheckReq();
+            $this->vipLinkCheckReq = new \Dml\EasyTBK\Vip\Request\VipLinkCheckReq();
             $this->vipLinkCheckReq->read($input);
 
         }
@@ -957,7 +957,7 @@ class UnionUrlService_vipLinkCheck_args
 
         if (!is_object($this->vipLinkCheckReq)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $xfer += $this->vipLinkCheckReq->write($output);
@@ -1013,7 +1013,7 @@ class UnionUrlService_vipLinkCheckWithOuth_args
         if (true) {
 
 
-            $this->vipLinkCheckReq = new \YearDley\EasyTBK\Vip\Request\VipLinkCheckReq();
+            $this->vipLinkCheckReq = new \Dml\EasyTBK\Vip\Request\VipLinkCheckReq();
             $this->vipLinkCheckReq->read($input);
 
         }
@@ -1031,7 +1031,7 @@ class UnionUrlService_vipLinkCheckWithOuth_args
 
         if (!is_object($this->vipLinkCheckReq)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $xfer += $this->vipLinkCheckReq->write($output);
@@ -1087,7 +1087,7 @@ class UnionUrlService_genByGoodsId_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\UrlGenResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\UrlGenResponse();
             $this->success->read($input);
 
         }
@@ -1107,7 +1107,7 @@ class UnionUrlService_genByGoodsId_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1165,7 +1165,7 @@ class UnionUrlService_genByGoodsIdWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\UrlGenResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\UrlGenResponse();
             $this->success->read($input);
 
         }
@@ -1185,7 +1185,7 @@ class UnionUrlService_genByGoodsIdWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1243,7 +1243,7 @@ class UnionUrlService_genByVIPUrl_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\UrlGenResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\UrlGenResponse();
             $this->success->read($input);
 
         }
@@ -1263,7 +1263,7 @@ class UnionUrlService_genByVIPUrl_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1321,7 +1321,7 @@ class UnionUrlService_genByVIPUrlWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\UrlGenResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\UrlGenResponse();
             $this->success->read($input);
 
         }
@@ -1341,7 +1341,7 @@ class UnionUrlService_genByVIPUrlWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1419,7 +1419,7 @@ class UnionUrlService_healthCheck_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1477,7 +1477,7 @@ class UnionUrlService_vipLinkCheck_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\VipLinkCheckResp();
+            $this->success = new \Dml\EasyTBK\Vip\Request\VipLinkCheckResp();
             $this->success->read($input);
 
         }
@@ -1497,7 +1497,7 @@ class UnionUrlService_vipLinkCheck_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1555,7 +1555,7 @@ class UnionUrlService_vipLinkCheckWithOuth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\VipLinkCheckResp();
+            $this->success = new \Dml\EasyTBK\Vip\Request\VipLinkCheckResp();
             $this->success->read($input);
 
         }
@@ -1575,7 +1575,7 @@ class UnionUrlService_vipLinkCheckWithOuth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);

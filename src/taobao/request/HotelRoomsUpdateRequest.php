@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Request;
+namespace Dml\EasyTBK\TaoBao\Request;
 
 /**
  * TOP API: taobao.hotel.rooms.update request

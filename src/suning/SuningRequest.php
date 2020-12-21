@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\SuNing;
+namespace Dml\EasyTBK\SuNing;
 
 abstract class SuningRequest
 {

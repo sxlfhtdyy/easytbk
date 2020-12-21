@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Domain;
+namespace Dml\EasyTBK\TaoBao\Domain;
 
 /**
  * 用户最近轨迹信息

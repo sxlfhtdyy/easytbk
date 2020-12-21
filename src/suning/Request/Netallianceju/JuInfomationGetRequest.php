@@ -1,8 +1,8 @@
 <?php
-namespace YearDley\EasyTBK\SuNing\Request\Netallianceju;
+namespace Dml\EasyTBK\SuNing\Request\Netallianceju;
 
-use YearDley\EasyTBK\SuNing\SuningRequest;
-use YearDley\EasyTBK\SuNing\RequestCheckUtil;
+use Dml\EasyTBK\SuNing\SuningRequest;
+use Dml\EasyTBK\SuNing\RequestCheckUtil;
 
 /**
  * 苏宁开放平台接口 - 单笔查询大聚会商品信息

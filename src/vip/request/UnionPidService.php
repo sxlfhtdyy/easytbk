@@ -8,25 +8,25 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 interface UnionPidServiceIf
 {
 
 
-    public function genPid(\YearDley\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest);
+    public function genPid(\Dml\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest);
 
-    public function genPidWithOauth(\YearDley\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest);
+    public function genPidWithOauth(\Dml\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest);
 
     public function healthCheck();
 
-    public function queryPid(\YearDley\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest);
+    public function queryPid(\Dml\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest);
 
-    public function queryPidWithOauth(\YearDley\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest);
+    public function queryPidWithOauth(\Dml\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest);
 
 }
 
-class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub implements \YearDley\EasyTBK\Vip\Request\UnionPidServiceIf
+class _UnionPidServiceClient extends \Dml\EasyTBK\Vip\Osp\Base\OspStub implements \Dml\EasyTBK\Vip\Request\UnionPidServiceIf
 {
 
     public function __construct()
@@ -36,18 +36,18 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     }
 
 
-    public function genPid(\YearDley\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
+    public function genPid(\Dml\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
     {
 
         $this->send_genPid($pidGenRequest);
         return $this->recv_genPid();
     }
 
-    public function send_genPid(\YearDley\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
+    public function send_genPid(\Dml\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
     {
 
         $this->initInvocation("genPid");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionPidService_genPid_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionPidService_genPid_args();
 
         $args->pidGenRequest = $pidGenRequest;
 
@@ -57,7 +57,7 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_genPid()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionPidService_genPid_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionPidService_genPid_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -67,18 +67,18 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     }
 
 
-    public function genPidWithOauth(\YearDley\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
+    public function genPidWithOauth(\Dml\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
     {
 
         $this->send_genPidWithOauth($pidGenRequest);
         return $this->recv_genPidWithOauth();
     }
 
-    public function send_genPidWithOauth(\YearDley\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
+    public function send_genPidWithOauth(\Dml\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest)
     {
 
         $this->initInvocation("genPidWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionPidService_genPidWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionPidService_genPidWithOauth_args();
 
         $args->pidGenRequest = $pidGenRequest;
         $this->send_base($args);
@@ -87,7 +87,7 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_genPidWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionPidService_genPidWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionPidService_genPidWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -108,7 +108,7 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     {
 
         $this->initInvocation("healthCheck");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionPidService_healthCheck_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionPidService_healthCheck_args();
 
         $this->send_base($args);
     }
@@ -116,7 +116,7 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_healthCheck()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionPidService_healthCheck_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionPidService_healthCheck_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -126,18 +126,18 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     }
 
 
-    public function queryPid(\YearDley\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
+    public function queryPid(\Dml\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
     {
 
         $this->send_queryPid($pidQueryRequest);
         return $this->recv_queryPid();
     }
 
-    public function send_queryPid(\YearDley\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
+    public function send_queryPid(\Dml\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
     {
 
         $this->initInvocation("queryPid");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionPidService_queryPid_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionPidService_queryPid_args();
 
         $args->pidQueryRequest = $pidQueryRequest;
 
@@ -147,7 +147,7 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_queryPid()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionPidService_queryPid_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionPidService_queryPid_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -157,18 +157,18 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     }
 
 
-    public function queryPidWithOauth(\YearDley\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
+    public function queryPidWithOauth(\Dml\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
     {
 
         $this->send_queryPidWithOauth($pidQueryRequest);
         return $this->recv_queryPidWithOauth();
     }
 
-    public function send_queryPidWithOauth(\YearDley\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
+    public function send_queryPidWithOauth(\Dml\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest)
     {
 
         $this->initInvocation("queryPidWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionPidService_queryPidWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionPidService_queryPidWithOauth_args();
 
         $args->pidQueryRequest = $pidQueryRequest;
 
@@ -178,7 +178,7 @@ class _UnionPidServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub impl
     public function recv_queryPidWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionPidService_queryPidWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionPidService_queryPidWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -232,7 +232,7 @@ class UnionPidService_genPid_args
         if (true) {
 
 
-            $this->pidGenRequest = new \YearDley\EasyTBK\Vip\Request\PidGenRequest();
+            $this->pidGenRequest = new \Dml\EasyTBK\Vip\Request\PidGenRequest();
             $this->pidGenRequest->read($input);
 
         }
@@ -252,7 +252,7 @@ class UnionPidService_genPid_args
 
             if (!is_object($this->pidGenRequest)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->pidGenRequest->write($output);
@@ -310,7 +310,7 @@ class UnionPidService_genPidWithOauth_args
         if (true) {
 
 
-            $this->pidGenRequest = new \YearDley\EasyTBK\Vip\Request\PidGenRequest();
+            $this->pidGenRequest = new \Dml\EasyTBK\Vip\Request\PidGenRequest();
             $this->pidGenRequest->read($input);
 
         }
@@ -330,7 +330,7 @@ class UnionPidService_genPidWithOauth_args
 
             if (!is_object($this->pidGenRequest)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->pidGenRequest->write($output);
@@ -430,7 +430,7 @@ class UnionPidService_queryPid_args
         if (true) {
 
 
-            $this->pidQueryRequest = new \YearDley\EasyTBK\Vip\Request\PidQueryRequest();
+            $this->pidQueryRequest = new \Dml\EasyTBK\Vip\Request\PidQueryRequest();
             $this->pidQueryRequest->read($input);
 
         }
@@ -450,7 +450,7 @@ class UnionPidService_queryPid_args
 
             if (!is_object($this->pidQueryRequest)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->pidQueryRequest->write($output);
@@ -508,7 +508,7 @@ class UnionPidService_queryPidWithOauth_args
         if (true) {
 
 
-            $this->pidQueryRequest = new \YearDley\EasyTBK\Vip\Request\PidQueryRequest();
+            $this->pidQueryRequest = new \Dml\EasyTBK\Vip\Request\PidQueryRequest();
             $this->pidQueryRequest->read($input);
 
         }
@@ -528,7 +528,7 @@ class UnionPidService_queryPidWithOauth_args
 
             if (!is_object($this->pidQueryRequest)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->pidQueryRequest->write($output);
@@ -586,7 +586,7 @@ class UnionPidService_genPid_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\CpsUnionPidGenResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\CpsUnionPidGenResponse();
             $this->success->read($input);
 
         }
@@ -606,7 +606,7 @@ class UnionPidService_genPid_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -664,7 +664,7 @@ class UnionPidService_genPidWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\CpsUnionPidGenResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\CpsUnionPidGenResponse();
             $this->success->read($input);
 
         }
@@ -684,7 +684,7 @@ class UnionPidService_genPidWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -762,7 +762,7 @@ class UnionPidService_healthCheck_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -820,7 +820,7 @@ class UnionPidService_queryPid_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\CpsUnionPidQueryResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\CpsUnionPidQueryResponse();
             $this->success->read($input);
 
         }
@@ -840,7 +840,7 @@ class UnionPidService_queryPid_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -898,7 +898,7 @@ class UnionPidService_queryPidWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\CpsUnionPidQueryResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\CpsUnionPidQueryResponse();
             $this->success->read($input);
 
         }
@@ -918,7 +918,7 @@ class UnionPidService_queryPidWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);

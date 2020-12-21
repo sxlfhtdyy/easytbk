@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Util;
+namespace Dml\EasyTBK\Vip\Osp\Util;
 
 class StringUtil
 {

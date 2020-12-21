@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 class UnionUrlServiceClient
 {
@@ -20,8 +20,8 @@ class UnionUrlServiceClient
     private static function regis()
     {
 
-        $path = \YearDley\EasyTBK\Vip\Osp\Util\PathUtil::getRootPath();
-        $nsLoader = new \YearDley\EasyTBK\Vip\Osp\ClassLoader\ClassLoader ();
+        $path = \Dml\EasyTBK\Vip\Osp\Util\PathUtil::getRootPath();
+        $nsLoader = new \Dml\EasyTBK\Vip\Osp\ClassLoader\ClassLoader ();
         $nsLoader->registerNamespace('Thrift', $path);
         $nsLoader->registerNamespace('Osp', $path);
         $nsLoader->registerNamespace('com', $path);
@@ -39,7 +39,7 @@ class UnionUrlServiceClient
         }
 
 
-        $ctx = \YearDley\EasyTBK\Vip\Osp\Context\InvocationContextFactory::getInstance();
+        $ctx = \Dml\EasyTBK\Vip\Osp\Context\InvocationContextFactory::getInstance();
         $ip = UnionUrlServiceClient::$DEFAULT_PROXY_IP;
         $port = UnionUrlServiceClient::$DEFAULT_PROXY_PORT;
         try {
@@ -70,7 +70,7 @@ class UnionUrlServiceClient
 
         //$ctx->setProtocol ( \Osp\Protocol\OspProtocol::$Binary );
 
-        return new \YearDley\EasyTBK\Vip\Request\UnionUrlServiceHelper();
+        return new \Dml\EasyTBK\Vip\Request\UnionUrlServiceHelper();
     }
 
 }

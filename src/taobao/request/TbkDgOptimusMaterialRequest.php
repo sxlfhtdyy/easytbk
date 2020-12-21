@@ -6,9 +6,9 @@
  * @since 1.0, 2019.10.31
  */
 
-namespace YearDley\EasyTBK\TaoBao\Request;
+namespace Dml\EasyTBK\TaoBao\Request;
 
-use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+use Dml\EasyTBK\TaoBao\RequestCheckUtil;
 
 class TbkDgOptimusMaterialRequest
 {

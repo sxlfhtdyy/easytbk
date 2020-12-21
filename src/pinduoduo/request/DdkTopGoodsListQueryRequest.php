@@ -1,8 +1,8 @@
 <?php
 
-namespace YearDley\EasyTBK\PinDuoDuo\Request;
+namespace Dml\EasyTBK\PinDuoDuo\Request;
 
-use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
+use Dml\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkTopGoodsListQueryRequest implements RequestInterface

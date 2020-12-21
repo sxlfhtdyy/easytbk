@@ -19,7 +19,7 @@
  *
  */
 
-namespace YearDley\EasyTBK\Vip\Osp\StringFunc;
+namespace Dml\EasyTBK\Vip\Osp\StringFunc;
 
 
 class Mbstring implements StringFunc

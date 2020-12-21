@@ -1,8 +1,8 @@
 <?php
-namespace YearDley\EasyTBK\SuNing\Request\Netalliance;
+namespace Dml\EasyTBK\SuNing\Request\Netalliance;
 
-use YearDley\EasyTBK\SuNing\SuningRequest;
-use YearDley\EasyTBK\SuNing\RequestCheckUtil;
+use Dml\EasyTBK\SuNing\SuningRequest;
+use Dml\EasyTBK\SuNing\RequestCheckUtil;
 
 /**
  * 苏宁开放平台接口 - 更新外部会员等级接口

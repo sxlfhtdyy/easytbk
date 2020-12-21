@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Log;
+namespace Dml\EasyTBK\Vip\Osp\Log;
 
 /**
  * 日志处理类
@@ -25,7 +25,7 @@ class Logger
 
     private static function init()
     {
-        Logger::$LOG_PATH = \YearDley\EasyTBK\Vip\Osp\Util\PathUtil::getRootPath() . "/osp-log/";
+        Logger::$LOG_PATH = \Dml\EasyTBK\Vip\Osp\Util\PathUtil::getRootPath() . "/osp-log/";
 
         if (!file_exists(Logger::$LOG_PATH)) {
             mkdir(Logger::$LOG_PATH);
@@ -86,7 +86,7 @@ class Logger
         $msg = "[ERROR]" . $msg;
 
         if (Logger::$LOG_LEVEL <= Logger::$LOG_LEVEL_ERROR) {
-            if ($e instanceof \YearDley\EasyTBK\Vip\Osp\Exception\OspException) {
+            if ($e instanceof \Dml\EasyTBK\Vip\Osp\Exception\OspException) {
                 Logger::log($msg . $e->getReturnCode());
                 Logger::log($msg . $e->getReturnMessage());
                 Logger::log($msg . serialize($e));

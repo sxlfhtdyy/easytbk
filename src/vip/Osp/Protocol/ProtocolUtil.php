@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Protocol;
+namespace Dml\EasyTBK\Vip\Osp\Protocol;
 
 class ProtocolUtil
 {
@@ -47,7 +47,7 @@ class ProtocolUtil
                 $prot->readBool($temp);
                 break;
             default :
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException ("unknow Type");
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException ("unknow Type");
         }
     }
 }

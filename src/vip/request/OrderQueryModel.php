@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 class OrderQueryModel
 {
@@ -232,7 +232,7 @@ class OrderQueryModel
 
             if ($needSkip) {
 
-                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
             }
 
             $input->readFieldEnd();
@@ -319,7 +319,7 @@ class OrderQueryModel
 
             if (!is_array($this->orderSnList)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();

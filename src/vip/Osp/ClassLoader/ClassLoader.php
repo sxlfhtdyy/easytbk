@@ -23,7 +23,7 @@
  * @package thrift.classloader
  */
 
-namespace YearDley\EasyTBK\Vip\Osp\ClassLoader;
+namespace Dml\EasyTBK\Vip\Osp\ClassLoader;
 
 class ClassLoader
 {

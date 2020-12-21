@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 class RefundOrderRequest
 {
@@ -197,7 +197,7 @@ class RefundOrderRequest
 
             if ($needSkip) {
 
-                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
             }
 
             $input->readFieldEnd();
@@ -243,7 +243,7 @@ class RefundOrderRequest
 
             if (!is_array($this->orderSns)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();

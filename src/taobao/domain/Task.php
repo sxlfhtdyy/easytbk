@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Domain;
+namespace Dml\EasyTBK\TaoBao\Domain;
 
 /**
  * 批量异步任务结果

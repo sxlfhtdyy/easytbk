@@ -1,12 +1,12 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Base;
+namespace Dml\EasyTBK\Vip\Osp\Base;
 
 //use Thrift\Transport\TFramedTransport;
 //use Thrift\Type\TMessageType;
 //use Thrift\Transport\TSocket;
 //use Thrift\Transport\TBufferedTransport;
-use YearDley\EasyTBK\Vip\Osp\Context\InvocationContextFactory;
+use Dml\EasyTBK\Vip\Osp\Context\InvocationContextFactory;
 
 class OspStub
 {
@@ -29,7 +29,7 @@ class OspStub
      */
     public function initInvocation($method)
     {
-        \YearDley\EasyTBK\Vip\Osp\Log\Logger::info("[OspStub][InitInvocation][Service-Version-Method][" . $this->serviceName . "-" . $this->version . "-" . $method . "]");
+        \Dml\EasyTBK\Vip\Osp\Log\Logger::info("[OspStub][InitInvocation][Service-Version-Method][" . $this->serviceName . "-" . $this->version . "-" . $method . "]");
 
         $ctx = InvocationContextFactory::getInstance();
         $ctx->reset();
@@ -69,7 +69,7 @@ class OspStub
         $sign .= "version" . $version;
         $sign .= $request;
 
-        return \YearDley\EasyTBK\Vip\Osp\Util\HmacUtil::hmac($sign, $appSecret);
+        return \Dml\EasyTBK\Vip\Osp\Util\HmacUtil::hmac($sign, $appSecret);
     }
 
     /**
@@ -104,7 +104,7 @@ class OspStub
      */
     public function getCallURLInfo($restAddr)
     {
-        if (!$restAddr) throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException("The openapi appURL is null, please set the appURL value");
+        if (!$restAddr) throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException("The openapi appURL is null, please set the appURL value");
         $url = parse_url($restAddr);
         //无指定协议，默认为http协议
         if (empty($url["scheme"])) {
@@ -125,7 +125,7 @@ class OspStub
     public function send_base($args)
     {
         $ctx = InvocationContextFactory::getInstance();
-        $oprot = new \YearDley\EasyTBK\Vip\Osp\Protocol\JSONProtocol(new \YearDley\EasyTBK\Vip\Osp\Buffer\MemoryBuffer());
+        $oprot = new \Dml\EasyTBK\Vip\Osp\Protocol\JSONProtocol(new \Dml\EasyTBK\Vip\Osp\Buffer\MemoryBuffer());
         $args->write($oprot);
 
         $requestBuffer = $oprot->getTransport()->getBuffer();
@@ -134,21 +134,21 @@ class OspStub
         $scheme = isset($url["scheme"]) ? $url["scheme"] : null;
         $host = isset($url["host"]) ? $url["host"] : null;
         $port = isset($url["port"]) ? $url["port"] : null;
-        $client = new \YearDley\EasyTBK\Vip\Osp\Http\HttpClient($scheme, $host, $port);
+        $client = new \Dml\EasyTBK\Vip\Osp\Http\HttpClient($scheme, $host, $port);
         $request = array();
 
         $appKey = $ctx->getAppKey();
-        if ($appKey == null) throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException("The openapi appKey is null, please set the appKey value");
+        if ($appKey == null) throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException("The openapi appKey is null, please set the appKey value");
 
         $appSecret = $ctx->getAppSecret();
-        if ($appSecret == null) throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException("The openapi appSecret is null, please set the appSecret value");
+        if ($appSecret == null) throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException("The openapi appSecret is null, please set the appSecret value");
 
         $accessToken = $ctx->getAccessToken();
         $language = $ctx->getLanguage();
         $format = "JSON";
         $method = $ctx->getMethod();
         $service = $ctx->getServiceName();
-        $timestamp = round(\YearDley\EasyTBK\Vip\Osp\Util\TimeUtil::currentTimeMillis() / 1000);
+        $timestamp = round(\Dml\EasyTBK\Vip\Osp\Util\TimeUtil::currentTimeMillis() / 1000);
         $version = $ctx->getCallerVersion();
         $sign = $this->createRequestSign($accessToken, $appKey, $format, $language, $method, $service, $timestamp, $version, $requestBuffer, $appSecret);
         $ctx->setSign($sign);
@@ -170,7 +170,7 @@ class OspStub
         try {
             $result = $client->post($url["path"] . '?' . $this->getQueryString($request), $requestBuffer);
         } catch (Exception $e) {
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException(\Osp\Util\MessageUtil::getInvocationMsg($ctx, $e->getMessage()), $e);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException(\Osp\Util\MessageUtil::getInvocationMsg($ctx, $e->getMessage()), $e);
         }
 
 
@@ -190,8 +190,8 @@ class OspStub
         $ctx = InvocationContextFactory::getInstance();
 
         $response = $ctx->getResponse();
-        if (\YearDley\EasyTBK\Vip\Osp\Base\OspStub::$RETURN_NULL != $response) {
-            $iprot = new \YearDley\EasyTBK\Vip\Osp\Protocol\JSONProtocol(new \YearDley\EasyTBK\Vip\Osp\Buffer\MemoryBuffer());
+        if (\Dml\EasyTBK\Vip\Osp\Base\OspStub::$RETURN_NULL != $response) {
+            $iprot = new \Dml\EasyTBK\Vip\Osp\Protocol\JSONProtocol(new \Dml\EasyTBK\Vip\Osp\Buffer\MemoryBuffer());
             $iprot->getTransport()->write($response);
 
             $iprot->readStructBegin();
@@ -205,7 +205,7 @@ class OspStub
                 $iprot->readFieldBegin();
                 $returnMessage = null;
                 $iprot->readString($returnMessage);
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException($returnMessage, $returnCode);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException($returnMessage, $returnCode);
             }
 
             $iprot->readFieldEnd();

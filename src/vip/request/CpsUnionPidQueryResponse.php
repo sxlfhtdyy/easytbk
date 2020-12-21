@@ -8,10 +8,10 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
-use YearDley\EasyTBK\Vip\Osp\Exception\OspException;
-use YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
+use Dml\EasyTBK\Vip\Osp\Exception\OspException;
+use Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
 
 class CpsUnionPidQueryResponse
 {
@@ -87,7 +87,7 @@ class CpsUnionPidQueryResponse
 
                         $elem0 = null;
 
-                        $elem0 = new \YearDley\EasyTBK\Vip\Request\PidInfo();
+                        $elem0 = new \Dml\EasyTBK\Vip\Request\PidInfo();
                         $elem0->read($input);
 
                         $this->pidInfoList[$_size0++] = $elem0;

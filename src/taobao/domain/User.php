@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Domain;
+namespace Dml\EasyTBK\TaoBao\Domain;
 
 /**
  * 被设置昵称的群成员

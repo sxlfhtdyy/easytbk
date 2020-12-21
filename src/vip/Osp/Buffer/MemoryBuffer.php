@@ -20,10 +20,10 @@
  * @package thrift.transport
  */
 
-namespace YearDley\EasyTBK\Vip\Osp\Buffer;
+namespace Dml\EasyTBK\Vip\Osp\Buffer;
 
-use YearDley\EasyTBK\Vip\Osp\Transport\Transport;
-use YearDley\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory;
+use Dml\EasyTBK\Vip\Osp\Transport\Transport;
+use Dml\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory;
 
 /**
  * A memory buffer is a tranpsort that simply reads from and writes to an

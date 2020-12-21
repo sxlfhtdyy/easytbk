@@ -1,14 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: YearDley
+ * User: Dml
  * Date: 2018/11/19
  * Time: 下午3:03
  */
 
-namespace YearDley\EasyTBK\PinDuoDuo\Request;
+namespace Dml\EasyTBK\PinDuoDuo\Request;
 
-use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
+use Dml\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkWeappQrcodeUrlGenRequest implements RequestInterface

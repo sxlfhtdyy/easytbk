@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Domain;
+namespace Dml\EasyTBK\TaoBao\Domain;
 
 /**
  * 传播形式对象列表

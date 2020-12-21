@@ -20,9 +20,9 @@
  * @package thrift.transport
  */
 
-namespace YearDley\EasyTBK\Vip\Osp\Transport;
+namespace Dml\EasyTBK\Vip\Osp\Transport;
 
-use YearDley\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory;
+use Dml\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory;
 
 /**
  * Base interface for a transport agent.

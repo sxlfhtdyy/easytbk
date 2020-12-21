@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Domain;
+namespace Dml\EasyTBK\TaoBao\Domain;
 
 /**
  * OPENIM群成员信息

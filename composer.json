@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "YearDley\\EasyTBK\\": "src/",
-            "YearDley\\EasyTBK\\PinDuoDuo\\": "src/pinduoduo",
-            "YearDley\\EasyTBK\\TaoBao\\": "src/taobao",
-            "YearDley\\EasyTBK\\JingDong\\": "src/jingdong",
-            "YearDley\\EasyTBK\\SuNing\\": "src/suning",
-            "YearDley\\EasyTBK\\Vip\\": "src/vip"
+            "Dml\\EasyTBK\\": "src/",
+            "Dml\\EasyTBK\\PinDuoDuo\\": "src/pinduoduo",
+            "Dml\\EasyTBK\\TaoBao\\": "src/taobao",
+            "Dml\\EasyTBK\\JingDong\\": "src/jingdong",
+            "Dml\\EasyTBK\\SuNing\\": "src/suning",
+            "Dml\\EasyTBK\\Vip\\": "src/vip"
         },
         "files": [
             "src/helper.php"

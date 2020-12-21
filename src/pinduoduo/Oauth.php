@@ -1,5 +1,5 @@
 <?php
-namespace YearDley\EasyTBK\PinDuoDuo;
+namespace Dml\EasyTBK\PinDuoDuo;
 
 
 class Oauth

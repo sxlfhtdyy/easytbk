@@ -1,7 +1,7 @@
 <?php
-namespace YearDley\EasyTBK\TaoBao\Request;
+namespace Dml\EasyTBK\TaoBao\Request;
 
-use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+use Dml\EasyTBK\TaoBao\RequestCheckUtil;
 /**
  * TOP API: taobao.tbk.dg.vegas.tlj.instance.report request
  * 

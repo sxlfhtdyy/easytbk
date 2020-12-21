@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 interface UnionGoodsServiceIf
 {
@@ -18,19 +18,19 @@ interface UnionGoodsServiceIf
 
     public function getByGoodsIdsWithOauth($goodsIdList, $requestId);
 
-    public function goodsList(\YearDley\EasyTBK\Vip\Request\GoodsInfoRequest $request);
+    public function goodsList(\Dml\EasyTBK\Vip\Request\GoodsInfoRequest $request);
 
-    public function goodsListWithOauth(\YearDley\EasyTBK\Vip\Request\GoodsInfoRequest $request);
+    public function goodsListWithOauth(\Dml\EasyTBK\Vip\Request\GoodsInfoRequest $request);
 
     public function healthCheck();
 
-    public function query(\YearDley\EasyTBK\Vip\Request\QueryGoodsRequest $request);
+    public function query(\Dml\EasyTBK\Vip\Request\QueryGoodsRequest $request);
 
-    public function queryWithOauth(\YearDley\EasyTBK\Vip\Request\QueryGoodsRequest $request);
+    public function queryWithOauth(\Dml\EasyTBK\Vip\Request\QueryGoodsRequest $request);
 
 }
 
-class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub implements \YearDley\EasyTBK\Vip\Request\UnionGoodsServiceIf
+class _UnionGoodsServiceClient extends \Dml\EasyTBK\Vip\Osp\Base\OspStub implements \Dml\EasyTBK\Vip\Request\UnionGoodsServiceIf
 {
 
     public function __construct()
@@ -51,7 +51,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     {
 
         $this->initInvocation("getByGoodsIds");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIds_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIds_args();
 
         $args->goodsIdList = $goodsIdList;
 
@@ -63,7 +63,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_getByGoodsIds()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIds_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIds_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -84,7 +84,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     {
 
         $this->initInvocation("getByGoodsIdsWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIdsWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIdsWithOauth_args();
 
         $args->goodsIdList = $goodsIdList;
 
@@ -96,7 +96,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_getByGoodsIdsWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIdsWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_getByGoodsIdsWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -106,18 +106,18 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function goodsList(\YearDley\EasyTBK\Vip\Request\GoodsInfoRequest $request)
+    public function goodsList(\Dml\EasyTBK\Vip\Request\GoodsInfoRequest $request)
     {
 
         $this->send_goodsList($request);
         return $this->recv_goodsList();
     }
 
-    public function send_goodsList(\YearDley\EasyTBK\Vip\Request\GoodsInfoRequest $request)
+    public function send_goodsList(\Dml\EasyTBK\Vip\Request\GoodsInfoRequest $request)
     {
 
         $this->initInvocation("goodsList");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_goodsList_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_goodsList_args();
 
         $args->request = $request;
 
@@ -127,7 +127,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_goodsList()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_goodsList_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_goodsList_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -137,18 +137,18 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function goodsListWithOauth(\YearDley\EasyTBK\Vip\Request\GoodsInfoRequest $request)
+    public function goodsListWithOauth(\Dml\EasyTBK\Vip\Request\GoodsInfoRequest $request)
     {
 
         $this->send_goodsListWithOauth($request);
         return $this->recv_goodsListWithOauth();
     }
 
-    public function send_goodsListWithOauth(\YearDley\EasyTBK\Vip\Request\GoodsInfoRequest $request)
+    public function send_goodsListWithOauth(\Dml\EasyTBK\Vip\Request\GoodsInfoRequest $request)
     {
 
         $this->initInvocation("goodsListWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_goodsListWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_goodsListWithOauth_args();
 
         $args->request = $request;
 
@@ -158,7 +158,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_goodsListWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_goodsListWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_goodsListWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -179,7 +179,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     {
 
         $this->initInvocation("healthCheck");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_healthCheck_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_healthCheck_args();
 
         $this->send_base($args);
     }
@@ -187,7 +187,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_healthCheck()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_healthCheck_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_healthCheck_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -197,18 +197,18 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function query(\YearDley\EasyTBK\Vip\Request\QueryGoodsRequest $request)
+    public function query(\Dml\EasyTBK\Vip\Request\QueryGoodsRequest $request)
     {
 
         $this->send_query($request);
         return $this->recv_query();
     }
 
-    public function send_query(\YearDley\EasyTBK\Vip\Request\QueryGoodsRequest $request)
+    public function send_query(\Dml\EasyTBK\Vip\Request\QueryGoodsRequest $request)
     {
 
         $this->initInvocation("query");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_query_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_query_args();
 
         $args->request = $request;
 
@@ -218,7 +218,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_query()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_query_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_query_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -228,18 +228,18 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function queryWithOauth(\YearDley\EasyTBK\Vip\Request\QueryGoodsRequest $request)
+    public function queryWithOauth(\Dml\EasyTBK\Vip\Request\QueryGoodsRequest $request)
     {
 
         $this->send_queryWithOauth($request);
         return $this->recv_queryWithOauth();
     }
 
-    public function send_queryWithOauth(\YearDley\EasyTBK\Vip\Request\QueryGoodsRequest $request)
+    public function send_queryWithOauth(\Dml\EasyTBK\Vip\Request\QueryGoodsRequest $request)
     {
 
         $this->initInvocation("queryWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_queryWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_queryWithOauth_args();
 
         $args->request = $request;
 
@@ -249,7 +249,7 @@ class _UnionGoodsServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_queryWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionGoodsService_queryWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionGoodsService_queryWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -354,7 +354,7 @@ class UnionGoodsService_getByGoodsIds_args
 
         if (!is_array($this->goodsIdList)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $output->writeListBegin();
@@ -473,7 +473,7 @@ class UnionGoodsService_getByGoodsIdsWithOauth_args
 
         if (!is_array($this->goodsIdList)) {
 
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
         }
 
         $output->writeListBegin();
@@ -541,7 +541,7 @@ class UnionGoodsService_goodsList_args
         if (true) {
 
 
-            $this->request = new \YearDley\EasyTBK\Vip\Request\GoodsInfoRequest();
+            $this->request = new \Dml\EasyTBK\Vip\Request\GoodsInfoRequest();
             $this->request->read($input);
 
         }
@@ -561,7 +561,7 @@ class UnionGoodsService_goodsList_args
 
             if (!is_object($this->request)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->request->write($output);
@@ -619,7 +619,7 @@ class UnionGoodsService_goodsListWithOauth_args
         if (true) {
 
 
-            $this->request = new \YearDley\EasyTBK\Vip\Request\GoodsInfoRequest();
+            $this->request = new \Dml\EasyTBK\Vip\Request\GoodsInfoRequest();
             $this->request->read($input);
 
         }
@@ -639,7 +639,7 @@ class UnionGoodsService_goodsListWithOauth_args
 
             if (!is_object($this->request)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->request->write($output);
@@ -739,7 +739,7 @@ class UnionGoodsService_query_args
         if (true) {
 
 
-            $this->request = new \YearDley\EasyTBK\Vip\Request\QueryGoodsRequest();
+            $this->request = new \Dml\EasyTBK\Vip\Request\QueryGoodsRequest();
             $this->request->read($input);
 
         }
@@ -759,7 +759,7 @@ class UnionGoodsService_query_args
 
             if (!is_object($this->request)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->request->write($output);
@@ -817,7 +817,7 @@ class UnionGoodsService_queryWithOauth_args
         if (true) {
 
 
-            $this->request = new \YearDley\EasyTBK\Vip\Request\QueryGoodsRequest();
+            $this->request = new \Dml\EasyTBK\Vip\Request\QueryGoodsRequest();
             $this->request->read($input);
 
         }
@@ -837,7 +837,7 @@ class UnionGoodsService_queryWithOauth_args
 
             if (!is_object($this->request)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->request->write($output);
@@ -904,7 +904,7 @@ class UnionGoodsService_getByGoodsIds_result
 
                     $elem0 = null;
 
-                    $elem0 = new \YearDley\EasyTBK\Vip\Request\GoodsInfo();
+                    $elem0 = new \Dml\EasyTBK\Vip\Request\GoodsInfo();
                     $elem0->read($input);
 
                     $this->success[$_size0++] = $elem0;
@@ -933,7 +933,7 @@ class UnionGoodsService_getByGoodsIds_result
 
             if (!is_array($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();
@@ -942,7 +942,7 @@ class UnionGoodsService_getByGoodsIds_result
 
                 if (!is_object($iter0)) {
 
-                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                    throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
                 }
 
                 $xfer += $iter0->write($output);
@@ -1013,7 +1013,7 @@ class UnionGoodsService_getByGoodsIdsWithOauth_result
 
                     $elem1 = null;
 
-                    $elem1 = new \YearDley\EasyTBK\Vip\Request\GoodsInfo();
+                    $elem1 = new \Dml\EasyTBK\Vip\Request\GoodsInfo();
                     $elem1->read($input);
 
                     $this->success[$_size1++] = $elem1;
@@ -1042,7 +1042,7 @@ class UnionGoodsService_getByGoodsIdsWithOauth_result
 
             if (!is_array($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();
@@ -1051,7 +1051,7 @@ class UnionGoodsService_getByGoodsIdsWithOauth_result
 
                 if (!is_object($iter0)) {
 
-                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                    throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
                 }
 
                 $xfer += $iter0->write($output);
@@ -1113,7 +1113,7 @@ class UnionGoodsService_goodsList_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\GoodsInfoResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\GoodsInfoResponse();
             $this->success->read($input);
 
         }
@@ -1133,7 +1133,7 @@ class UnionGoodsService_goodsList_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1191,7 +1191,7 @@ class UnionGoodsService_goodsListWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\GoodsInfoResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\GoodsInfoResponse();
             $this->success->read($input);
 
         }
@@ -1211,7 +1211,7 @@ class UnionGoodsService_goodsListWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1289,7 +1289,7 @@ class UnionGoodsService_healthCheck_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1347,7 +1347,7 @@ class UnionGoodsService_query_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\GoodsInfoResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\GoodsInfoResponse();
             $this->success->read($input);
 
         }
@@ -1367,7 +1367,7 @@ class UnionGoodsService_query_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -1425,7 +1425,7 @@ class UnionGoodsService_queryWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\GoodsInfoResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\GoodsInfoResponse();
             $this->success->read($input);
 
         }
@@ -1445,7 +1445,7 @@ class UnionGoodsService_queryWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);

@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao;
+namespace Dml\EasyTBK\TaoBao;
 
 /**
  * 返回的默认类

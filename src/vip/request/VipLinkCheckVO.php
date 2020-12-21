@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 class VipLinkCheckVO
 {
@@ -95,7 +95,7 @@ class VipLinkCheckVO
 
                 $needSkip = false;
 
-                $names = \YearDley\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names;
+                $names = \Dml\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names;
                 $name = null;
                 $input->readString($name);
                 foreach ($names as $k => $v) {
@@ -138,7 +138,7 @@ class VipLinkCheckVO
 
             if ($needSkip) {
 
-                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
             }
 
             $input->readFieldEnd();
@@ -159,8 +159,8 @@ class VipLinkCheckVO
 
             $xfer += $output->writeFieldBegin('linkType');
 
-            $em = new \YearDley\EasyTBK\Vip\Request\VipLinkTypeEnum;
-            $output->writeString(\YearDley\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names[$this->linkType]);
+            $em = new \Dml\EasyTBK\Vip\Request\VipLinkTypeEnum;
+            $output->writeString(\Dml\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names[$this->linkType]);
 
             $xfer += $output->writeFieldEnd();
         }

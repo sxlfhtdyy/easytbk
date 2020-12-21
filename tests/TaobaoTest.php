@@ -4,12 +4,12 @@
 require '../vendor/autoload.php';
 
 
-$client = \YearDley\EasyTBK\Factory::taobao([
+$client = \Dml\EasyTBK\Factory::taobao([
     'app_key' => 'TAOBAO_APP_KEY',
     'app_secret' => 'TAOBAO_APP_SECRET',
     'format' => 'json'
 ]);
-$req = new \YearDley\EasyTBK\TaoBao\Request\TbkDgOptimusMaterialRequest();
+$req = new \Dml\EasyTBK\TaoBao\Request\TbkDgOptimusMaterialRequest();
 $req->setPageSize("20");
 $req->setAdzoneId("123");
 $req->setPageNo("1");

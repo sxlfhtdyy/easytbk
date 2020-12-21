@@ -6,9 +6,9 @@
  * @date   2015-10-28
  */
 
-namespace YearDley\EasyTBK\SuNing\Request\Union;
+namespace Dml\EasyTBK\SuNing\Request\Union;
 
-use YearDley\EasyTBK\SuNing\SelectSuningRequest;
+use Dml\EasyTBK\SuNing\SelectSuningRequest;
 
 class UnionInfomationQueryRequest extends SelectSuningRequest
 {

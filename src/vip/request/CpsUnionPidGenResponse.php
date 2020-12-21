@@ -8,9 +8,9 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
-use YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
+use Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
 
 class CpsUnionPidGenResponse
 {
@@ -96,7 +96,7 @@ class CpsUnionPidGenResponse
 
                         $elem0 = null;
 
-                        $elem0 = new \YearDley\EasyTBK\Vip\Request\PidInfo();
+                        $elem0 = new \Dml\EasyTBK\Vip\Request\PidInfo();
                         $elem0->read($input);
 
                         $this->pidInfoList[$_size0++] = $elem0;
@@ -151,7 +151,7 @@ class CpsUnionPidGenResponse
 
             if (!is_array($this->pidInfoList)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();
@@ -160,7 +160,7 @@ class CpsUnionPidGenResponse
 
                 if (!is_object($iter0)) {
 
-                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+                    throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
                 }
 
                 $xfer += $iter0->write($output);

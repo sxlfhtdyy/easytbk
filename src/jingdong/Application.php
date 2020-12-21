@@ -1,13 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: YearDley
+ * User: Dml
  * Date: 2019/1/8
  * Time: 13:56
  * https://router.jd.com/api?v=1.0&method=jd.union.open.goods.query&access_token=&app_key=ab2ef93a20a5492d8b0dad11ad34b256&sign_method=md5&format=json&timestamp=2019-01-08 14:57:08&sign=B7B42BB545958BBA25DD795FFEDD35E2&param_json={"goodsReqDTO":{"keyword":"女装"}}
  */
 
-namespace YearDley\EasyTBK\JingDong;
+namespace Dml\EasyTBK\JingDong;
 
 
 class Application
@@ -38,7 +38,7 @@ class Application
 
     /**
      * 单例获取当前对象
-     * @Author: YearDley
+     * @Author: Dml
      * @Date: 2018/4/26
      * @return static
      */
@@ -52,7 +52,7 @@ class Application
 
     /**
      * 魔术方法 调用不存在的静态方法时触发
-     * @Author: YearDley
+     * @Author: Dml
      * @Date: 2018/4/26
      * @param $name
      * @param $arguments
@@ -67,7 +67,7 @@ class Application
 
     /**
      * 执行
-     * @Author: YearDley
+     * @Author: Dml
      * @Date: 2018/4/26
      * @param $request
      * @return mixed
@@ -138,7 +138,7 @@ class Application
 
     /**
      * post请求
-     * @Author: YearDley
+     * @Author: Dml
      * @Date: 2018/4/26
      * @param $url
      * @return mixed

@@ -19,8 +19,8 @@ composer require dml/easytbk
 
 ```php
 <?php
-use YearDley\EasyTBK\Factory;
-use YearDley\EasyTBK\TaoBao\Request\TbkItemInfoGetRequest;
+use Dml\EasyTBK\Factory;
+use Dml\EasyTBK\TaoBao\Request\TbkItemInfoGetRequest;
 
 $client = Factory::taobao([
     'app_key' => 'TAOBAO_APP_KEY',
@@ -35,8 +35,8 @@ return $client->execute ($req);
 2、京东SDK初始化
 ```php
 <?php
-use YearDley\EasyTBK\Factory;
-use YearDley\EasyTBK\JingDong\Request\JdUnionGoodsPromotiongoodsinfoQueryRequest;
+use Dml\EasyTBK\Factory;
+use Dml\EasyTBK\JingDong\Request\JdUnionGoodsPromotiongoodsinfoQueryRequest;
 
 $jd = Factory::jingdong([
     'app_key' => 'JD_APP_KEY',
@@ -51,8 +51,8 @@ return $jd->execute($req);
 3、拼多多SDK初始化
 ```php
 <?php
-use YearDley\EasyTBK\Factory;
-use YearDley\EasyTBK\PinDuoDuo\Request\DdkGoodsDetailRequest;
+use Dml\EasyTBK\Factory;
+use Dml\EasyTBK\PinDuoDuo\Request\DdkGoodsDetailRequest;
 
 $pdd = Factory::pinduoduo([
     'client_id' => 'PDD_CLIENT_ID',
@@ -67,9 +67,9 @@ return  $pdd->execute($req);
 4、唯品会SDK初始化
 ```php
 <?php
-use YearDley\EasyTBK\Factory;
-use YearDley\EasyTBK\Vip\Request\PidGenRequest;
-use YearDley\EasyTBK\Vip\Request\UnionPidServiceClient;
+use Dml\EasyTBK\Factory;
+use Dml\EasyTBK\Vip\Request\PidGenRequest;
+use Dml\EasyTBK\Vip\Request\UnionPidServiceClient;
 
 // 唯品会官方的sdk写的比较垃圾，用法和其他平台稍微不一样
 $service= UnionPidServiceClient::getService();
@@ -90,8 +90,8 @@ print_r($service->genPidWithOauth($pidGenRequest1));
 5、苏宁连联盟SDK初始化
 ```php
 <?php
-use YearDley\EasyTBK\Factory;
-use YearDley\EasyTBK\SuNing\Request\Netalliance\CouponproductQueryRequest;
+use Dml\EasyTBK\Factory;
+use Dml\EasyTBK\SuNing\Request\Netalliance\CouponproductQueryRequest;
 
 $c = Factory::suning([
     'app_key' => 'SUNING_APP_KEY',

@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 class GoodsInfo
 {
@@ -647,7 +647,7 @@ class GoodsInfo
 
                 $needSkip = false;
 
-                $this->storeInfo = new \YearDley\EasyTBK\Vip\Request\StoreInfo();
+                $this->storeInfo = new \Dml\EasyTBK\Vip\Request\StoreInfo();
                 $this->storeInfo->read($input);
 
             }
@@ -657,7 +657,7 @@ class GoodsInfo
 
                 $needSkip = false;
 
-                $this->commentsInfo = new \YearDley\EasyTBK\Vip\Request\GoodsCommentsInfo();
+                $this->commentsInfo = new \Dml\EasyTBK\Vip\Request\GoodsCommentsInfo();
                 $this->commentsInfo->read($input);
 
             }
@@ -667,7 +667,7 @@ class GoodsInfo
 
                 $needSkip = false;
 
-                $this->storeServiceCapability = new \YearDley\EasyTBK\Vip\Request\StoreServiceCapability();
+                $this->storeServiceCapability = new \Dml\EasyTBK\Vip\Request\StoreServiceCapability();
                 $this->storeServiceCapability->read($input);
 
             }
@@ -707,7 +707,7 @@ class GoodsInfo
 
             if ($needSkip) {
 
-                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
             }
 
             $input->readFieldEnd();
@@ -775,7 +775,7 @@ class GoodsInfo
 
             if (!is_array($this->goodsCarouselPictures)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();
@@ -878,7 +878,7 @@ class GoodsInfo
 
             if (!is_array($this->goodsDetailPictures)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeListBegin();
@@ -999,7 +999,7 @@ class GoodsInfo
 
             if (!is_object($this->storeInfo)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->storeInfo->write($output);
@@ -1014,7 +1014,7 @@ class GoodsInfo
 
             if (!is_object($this->commentsInfo)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->commentsInfo->write($output);
@@ -1029,7 +1029,7 @@ class GoodsInfo
 
             if (!is_object($this->storeServiceCapability)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->storeServiceCapability->write($output);

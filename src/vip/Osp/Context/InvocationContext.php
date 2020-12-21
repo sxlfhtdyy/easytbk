@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Context;
+namespace Dml\EasyTBK\Vip\Osp\Context;
 
 /**
  * 调用上下文

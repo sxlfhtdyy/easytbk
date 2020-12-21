@@ -21,7 +21,7 @@
  * @package thrift.protocol
  */
 
-namespace YearDley\EasyTBK\Vip\Osp\Protocol;
+namespace Dml\EasyTBK\Vip\Osp\Protocol;
 
 /**
  * JSON implementation of thrift protocol, ported from Java.
@@ -171,8 +171,8 @@ class JSONProtocol extends Protocol
     public function __construct($trans)
     {
         //parent::__construct($trans);
-        $this->context_ = new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext();
-        $this->reader_ = new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\LookaheadReader($this);
+        $this->context_ = new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext();
+        $this->reader_ = new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\LookaheadReader($this);
 
         $this->trans_ = $trans;
     }
@@ -180,8 +180,8 @@ class JSONProtocol extends Protocol
     public function reset()
     {
         $this->contextStack_ = array();
-        $this->context_ = new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext();
-        $this->reader_ = new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\LookaheadReader($this);
+        $this->context_ = new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext();
+        $this->reader_ = new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\LookaheadReader($this);
     }
 
     private $tmpbuf_ = array(4);
@@ -200,7 +200,7 @@ class JSONProtocol extends Protocol
         if (substr($ch, 0, 1) == $b) {
             $this->reader_->read();
         } else {
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException("Unexpected character: " . $ch);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException("Unexpected character: " . $ch);
         }
     }
 
@@ -281,7 +281,7 @@ class JSONProtocol extends Protocol
     {
         $this->context_->write();
         $this->trans_->write(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPPairContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPPairContext($this));
     }
 
     private function writeJSONObjectEnd()
@@ -294,7 +294,7 @@ class JSONProtocol extends Protocol
     {
         $this->context_->write();
         $this->trans_->write(self::LBRACKET);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
     }
 
     private function writeJSONArrayEnd()
@@ -384,7 +384,7 @@ class JSONProtocol extends Protocol
 
         if (!is_numeric($str)) {
             //throw new TProtocolException("Invalid data in numeric: " . $str, TProtocolException::INVALID_DATA);
-            throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException("Invalid data in numeric: " . $str);
+            throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException("Invalid data in numeric: " . $str);
         }
 
         return intval($str);
@@ -459,7 +459,7 @@ class JSONProtocol extends Protocol
     {
         $this->context_->read();
         $this->readJSONSyntaxChar(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPPairContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPPairContext($this));
     }
 
     private function readJSONObjectEnd()
@@ -472,7 +472,7 @@ class JSONProtocol extends Protocol
     {
         $this->context_->read();
         $this->readJSONSyntaxChar(self::LBRACKET);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
     }
 
     private function readJSONArrayEnd()
@@ -519,7 +519,7 @@ class JSONProtocol extends Protocol
 
         $this->context_->write();
         $this->trans_->write(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
     }
 
     /**
@@ -548,7 +548,7 @@ class JSONProtocol extends Protocol
         $this->context_->setColon_(!$this->context_->isColon_());
         $this->context_->write();
         //$this->trans_->write(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\PairContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\PairContext($this));
         $this->writeJSONString($name);
     }
 
@@ -574,7 +574,7 @@ class JSONProtocol extends Protocol
 
         $this->context_->write();
         $this->trans_->write(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\PairContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\PairContext($this));
     }
 
     public function writeMapEnd()
@@ -595,7 +595,7 @@ class JSONProtocol extends Protocol
 
         $this->context_->write();
         $this->trans_->write(self::LBRACKET);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
     }
 
     public function writeListEnd()
@@ -615,7 +615,7 @@ class JSONProtocol extends Protocol
 
         $this->context_->write();
         $this->trans_->write(self::LBRACKET);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
     }
 
     public function writeSetEnd()
@@ -701,7 +701,7 @@ class JSONProtocol extends Protocol
 
         $this->context_->read();
         $this->readJSONSyntaxChar(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
     }
 
     public function readStructEnd()
@@ -734,7 +734,7 @@ class JSONProtocol extends Protocol
 
         $this->context_->read();
         //$this->readJSONSyntaxChar(self::LBRACE);
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPPairContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPPairContext($this));
 
         $fieldName = null;
 
@@ -771,7 +771,7 @@ class JSONProtocol extends Protocol
         $this->readJSONObjectStart();*/
 
         $this->context_->read();
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\PairContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\PairContext($this));
         $this->readJSONSyntaxChar(self::LBRACE);
     }
 
@@ -793,7 +793,7 @@ class JSONProtocol extends Protocol
         return true;*/
 
         $this->context_->read();
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
         $this->readJSONSyntaxChar(self::LBRACKET);
     }
 
@@ -813,7 +813,7 @@ class JSONProtocol extends Protocol
         return true;*/
 
         $this->context_->read();
-        $this->pushContext(new \YearDley\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
+        $this->pushContext(new \Dml\EasyTBK\Vip\Osp\Protocol\JSON\OSPListContext($this));
         $this->readJSONSyntaxChar(self::LBRACKET);
     }
 
@@ -916,9 +916,9 @@ class JSONProtocol extends Protocol
     {
         $result = ProtocolUtil::$UNKNOW;
         $buff = $this->trans_->getBuffer();
-        $b = \YearDley\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory::create()->substr($buff, 0, 1);
+        $b = \Dml\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory::create()->substr($buff, 0, 1);
         if ($b == self::COLON || $b == self::COMMA) {
-            $b = \YearDley\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory::create()->substr($buff, 1, 1);
+            $b = \Dml\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory::create()->substr($buff, 1, 1);
         }
         if ($this->isNumber($b)) {
             $result = ProtocolUtil::$NUMBER;

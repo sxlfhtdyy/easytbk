@@ -1,7 +1,7 @@
 <?php
 
 
-namespace YearDley\EasyTBK\JingDong;
+namespace Dml\EasyTBK\JingDong;
 
 
 class Oauth

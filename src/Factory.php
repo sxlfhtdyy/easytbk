@@ -1,13 +1,13 @@
 <?php
 
-namespace YearDley\EasyTBK;
+namespace Dml\EasyTBK;
 
-use YearDley\EasyTBK\TaoBao\Application as TaoBao;
-use YearDley\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
-use YearDley\EasyTBK\JingDong\Application as JingDong;
-use YearDley\EasyTBK\Vip\Application as Vip;
-use YearDley\EasyTBK\SuNing\Application as SuNing;
-use YearDley\EasyTBK\Vip\Osp\Context\InvocationContext;
+use Dml\EasyTBK\TaoBao\Application as TaoBao;
+use Dml\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
+use Dml\EasyTBK\JingDong\Application as JingDong;
+use Dml\EasyTBK\Vip\Application as Vip;
+use Dml\EasyTBK\SuNing\Application as SuNing;
+use Dml\EasyTBK\Vip\Osp\Context\InvocationContext;
 
 /**
  * Class Factory.

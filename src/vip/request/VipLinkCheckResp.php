@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 class VipLinkCheckResp
 {
@@ -86,7 +86,7 @@ class VipLinkCheckResp
 
                         $val0 = null;
 
-                        $val0 = new \YearDley\EasyTBK\Vip\Request\VipLinkCheckVO();
+                        $val0 = new \Dml\EasyTBK\Vip\Request\VipLinkCheckVO();
                         $val0->read($input);
 
                         $this->successMap[$key0] = $val0;
@@ -116,7 +116,7 @@ class VipLinkCheckResp
 
                         $val1 = null;
 
-                        $val1 = new \YearDley\EasyTBK\Vip\Request\VipLinkCheckVO();
+                        $val1 = new \Dml\EasyTBK\Vip\Request\VipLinkCheckVO();
                         $val1->read($input);
 
                         $this->failMap[$key1] = $val1;
@@ -133,7 +133,7 @@ class VipLinkCheckResp
 
             if ($needSkip) {
 
-                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
             }
 
             $input->readFieldEnd();
@@ -156,7 +156,7 @@ class VipLinkCheckResp
 
             if (!is_array($this->successMap)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeMapBegin();
@@ -167,7 +167,7 @@ class VipLinkCheckResp
 
                 if (!is_object($viter0)) {
 
-                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                    throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
                 }
 
                 $xfer += $viter0->write($output);
@@ -186,7 +186,7 @@ class VipLinkCheckResp
 
             if (!is_array($this->failMap)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $output->writeMapBegin();
@@ -197,7 +197,7 @@ class VipLinkCheckResp
 
                 if (!is_object($viter0)) {
 
-                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                    throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
                 }
 
                 $xfer += $viter0->write($output);

@@ -8,9 +8,9 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
-use YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
+use Dml\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
 
 class GoodsCommentsInfo
 {

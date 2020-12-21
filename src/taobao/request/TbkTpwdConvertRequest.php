@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao\Request;
+namespace Dml\EasyTBK\TaoBao\Request;
 /**
  * TOP API: taobao.tbk.tpwd.convert request
  *
@@ -8,7 +8,7 @@ namespace YearDley\EasyTBK\TaoBao\Request;
  * @since 1.0, 2018.08.31
  */
 
-use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+use Dml\EasyTBK\TaoBao\RequestCheckUtil;
 
 class TbkTpwdConvertRequest
 {

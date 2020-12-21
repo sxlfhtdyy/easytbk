@@ -1,14 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: YearDley
+ * User: Dml
  * Date: 2018/11/20
  * Time: 下午6:45
  */
 
-namespace YearDley\EasyTBK\PinDuoDuo\Request;
+namespace Dml\EasyTBK\PinDuoDuo\Request;
 
-use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
+use Dml\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkLotteryUrlGenRequest implements RequestInterface

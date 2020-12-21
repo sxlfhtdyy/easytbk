@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Protocol;
+namespace Dml\EasyTBK\Vip\Osp\Protocol;
 
 $base_path = dirname(__FILE__) . '/../../';
 

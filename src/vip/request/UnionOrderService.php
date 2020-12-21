@@ -8,7 +8,7 @@
 *
 */
 
-namespace YearDley\EasyTBK\Vip\Request;
+namespace Dml\EasyTBK\Vip\Request;
 
 interface UnionOrderServiceIf
 {
@@ -16,17 +16,17 @@ interface UnionOrderServiceIf
 
     public function healthCheck();
 
-    public function orderList(\YearDley\EasyTBK\Vip\Request\OrderQueryModel $queryModel);
+    public function orderList(\Dml\EasyTBK\Vip\Request\OrderQueryModel $queryModel);
 
-    public function orderListWithOauth(\YearDley\EasyTBK\Vip\Request\OrderQueryModel $queryModel);
+    public function orderListWithOauth(\Dml\EasyTBK\Vip\Request\OrderQueryModel $queryModel);
 
-    public function refundOrderList(\YearDley\EasyTBK\Vip\Request\RefundOrderRequest $request);
+    public function refundOrderList(\Dml\EasyTBK\Vip\Request\RefundOrderRequest $request);
 
-    public function refundOrderListWithOauth(\YearDley\EasyTBK\Vip\Request\RefundOrderRequest $request);
+    public function refundOrderListWithOauth(\Dml\EasyTBK\Vip\Request\RefundOrderRequest $request);
 
 }
 
-class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub implements \YearDley\EasyTBK\Vip\Request\UnionOrderServiceIf
+class _UnionOrderServiceClient extends \Dml\EasyTBK\Vip\Osp\Base\OspStub implements \Dml\EasyTBK\Vip\Request\UnionOrderServiceIf
 {
 
     public function __construct()
@@ -47,7 +47,7 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     {
 
         $this->initInvocation("healthCheck");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_healthCheck_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionOrderService_healthCheck_args();
 
         $this->send_base($args);
     }
@@ -55,7 +55,7 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_healthCheck()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_healthCheck_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionOrderService_healthCheck_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -65,18 +65,18 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function orderList(\YearDley\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
+    public function orderList(\Dml\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
     {
 
         $this->send_orderList($queryModel);
         return $this->recv_orderList();
     }
 
-    public function send_orderList(\YearDley\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
+    public function send_orderList(\Dml\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
     {
 
         $this->initInvocation("orderList");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_orderList_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionOrderService_orderList_args();
 
         $args->queryModel = $queryModel;
 
@@ -86,7 +86,7 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_orderList()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_orderList_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionOrderService_orderList_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -96,18 +96,18 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function orderListWithOauth(\YearDley\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
+    public function orderListWithOauth(\Dml\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
     {
 
         $this->send_orderListWithOauth($queryModel);
         return $this->recv_orderListWithOauth();
     }
 
-    public function send_orderListWithOauth(\YearDley\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
+    public function send_orderListWithOauth(\Dml\EasyTBK\Vip\Request\OrderQueryModel $queryModel)
     {
 
         $this->initInvocation("orderListWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_orderListWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionOrderService_orderListWithOauth_args();
 
         $args->queryModel = $queryModel;
 
@@ -117,7 +117,7 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_orderListWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_orderListWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionOrderService_orderListWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -127,18 +127,18 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function refundOrderList(\YearDley\EasyTBK\Vip\Request\RefundOrderRequest $request)
+    public function refundOrderList(\Dml\EasyTBK\Vip\Request\RefundOrderRequest $request)
     {
 
         $this->send_refundOrderList($request);
         return $this->recv_refundOrderList();
     }
 
-    public function send_refundOrderList(\YearDley\EasyTBK\Vip\Request\RefundOrderRequest $request)
+    public function send_refundOrderList(\Dml\EasyTBK\Vip\Request\RefundOrderRequest $request)
     {
 
         $this->initInvocation("refundOrderList");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_refundOrderList_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionOrderService_refundOrderList_args();
 
         $args->request = $request;
 
@@ -148,7 +148,7 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_refundOrderList()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_refundOrderList_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionOrderService_refundOrderList_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -158,18 +158,18 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     }
 
 
-    public function refundOrderListWithOauth(\YearDley\EasyTBK\Vip\Request\RefundOrderRequest $request)
+    public function refundOrderListWithOauth(\Dml\EasyTBK\Vip\Request\RefundOrderRequest $request)
     {
 
         $this->send_refundOrderListWithOauth($request);
         return $this->recv_refundOrderListWithOauth();
     }
 
-    public function send_refundOrderListWithOauth(\YearDley\EasyTBK\Vip\Request\RefundOrderRequest $request)
+    public function send_refundOrderListWithOauth(\Dml\EasyTBK\Vip\Request\RefundOrderRequest $request)
     {
 
         $this->initInvocation("refundOrderListWithOauth");
-        $args = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_refundOrderListWithOauth_args();
+        $args = new \Dml\EasyTBK\Vip\Request\UnionOrderService_refundOrderListWithOauth_args();
 
         $args->request = $request;
 
@@ -179,7 +179,7 @@ class _UnionOrderServiceClient extends \YearDley\EasyTBK\Vip\Osp\Base\OspStub im
     public function recv_refundOrderListWithOauth()
     {
 
-        $result = new \YearDley\EasyTBK\Vip\Request\UnionOrderService_refundOrderListWithOauth_result();
+        $result = new \Dml\EasyTBK\Vip\Request\UnionOrderService_refundOrderListWithOauth_result();
         $this->receive_base($result);
         if ($result->success !== null) {
 
@@ -275,7 +275,7 @@ class UnionOrderService_orderList_args
         if (true) {
 
 
-            $this->queryModel = new \YearDley\EasyTBK\Vip\Request\OrderQueryModel();
+            $this->queryModel = new \Dml\EasyTBK\Vip\Request\OrderQueryModel();
             $this->queryModel->read($input);
 
         }
@@ -295,7 +295,7 @@ class UnionOrderService_orderList_args
 
             if (!is_object($this->queryModel)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->queryModel->write($output);
@@ -353,7 +353,7 @@ class UnionOrderService_orderListWithOauth_args
         if (true) {
 
 
-            $this->queryModel = new \YearDley\EasyTBK\Vip\Request\OrderQueryModel();
+            $this->queryModel = new \Dml\EasyTBK\Vip\Request\OrderQueryModel();
             $this->queryModel->read($input);
 
         }
@@ -373,7 +373,7 @@ class UnionOrderService_orderListWithOauth_args
 
             if (!is_object($this->queryModel)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->queryModel->write($output);
@@ -431,7 +431,7 @@ class UnionOrderService_refundOrderList_args
         if (true) {
 
 
-            $this->request = new \YearDley\EasyTBK\Vip\Request\RefundOrderRequest();
+            $this->request = new \Dml\EasyTBK\Vip\Request\RefundOrderRequest();
             $this->request->read($input);
 
         }
@@ -451,7 +451,7 @@ class UnionOrderService_refundOrderList_args
 
             if (!is_object($this->request)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->request->write($output);
@@ -509,7 +509,7 @@ class UnionOrderService_refundOrderListWithOauth_args
         if (true) {
 
 
-            $this->request = new \YearDley\EasyTBK\Vip\Request\RefundOrderRequest();
+            $this->request = new \Dml\EasyTBK\Vip\Request\RefundOrderRequest();
             $this->request->read($input);
 
         }
@@ -529,7 +529,7 @@ class UnionOrderService_refundOrderListWithOauth_args
 
             if (!is_object($this->request)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->request->write($output);
@@ -607,7 +607,7 @@ class UnionOrderService_healthCheck_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -665,7 +665,7 @@ class UnionOrderService_orderList_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\OrderResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\OrderResponse();
             $this->success->read($input);
 
         }
@@ -685,7 +685,7 @@ class UnionOrderService_orderList_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -743,7 +743,7 @@ class UnionOrderService_orderListWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\OrderResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\OrderResponse();
             $this->success->read($input);
 
         }
@@ -763,7 +763,7 @@ class UnionOrderService_orderListWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -821,7 +821,7 @@ class UnionOrderService_refundOrderList_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\RefundOrderResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\RefundOrderResponse();
             $this->success->read($input);
 
         }
@@ -841,7 +841,7 @@ class UnionOrderService_refundOrderList_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);
@@ -899,7 +899,7 @@ class UnionOrderService_refundOrderListWithOauth_result
         if (true) {
 
 
-            $this->success = new \YearDley\EasyTBK\Vip\Request\RefundOrderResponse();
+            $this->success = new \Dml\EasyTBK\Vip\Request\RefundOrderResponse();
             $this->success->read($input);
 
         }
@@ -919,7 +919,7 @@ class UnionOrderService_refundOrderListWithOauth_result
 
             if (!is_object($this->success)) {
 
-                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                throw new \Dml\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Dml\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
             }
 
             $xfer += $this->success->write($output);

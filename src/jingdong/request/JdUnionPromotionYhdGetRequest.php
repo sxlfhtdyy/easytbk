@@ -1,13 +1,13 @@
 <?php
 
-namespace YearDley\EasyTBK\JingDong\Request;
+namespace Dml\EasyTBK\JingDong\Request;
 
-use YearDley\EasyTBK\JingDong\RequestInterface;
+use Dml\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionPromotionYhdGetRequest
- * @package YearDley\EasyTBK\JingDong\Request
+ * @package Dml\EasyTBK\JingDong\Request
  */
 class JdUnionPromotionYhdGetRequest implements RequestInterface
 {

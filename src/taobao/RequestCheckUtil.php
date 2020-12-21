@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\TaoBao;
+namespace Dml\EasyTBK\TaoBao;
 
 /**
  * API入参静态检查类

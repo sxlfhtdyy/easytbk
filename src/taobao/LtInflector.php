@@ -1,7 +1,7 @@
 <?php
 
 
-namespace YearDley\EasyTBK\TaoBao;
+namespace Dml\EasyTBK\TaoBao;
 
 
 class LtInflector

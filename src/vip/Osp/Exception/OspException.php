@@ -1,6 +1,6 @@
 <?php
 
-namespace YearDley\EasyTBK\Vip\Osp\Exception;
+namespace Dml\EasyTBK\Vip\Osp\Exception;
 
 /**
  * OSP异常信息封装类

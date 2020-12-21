@@ -2,7 +2,7 @@
 /*
  *  easytbk多联盟配置文件
  *
- *  Author: YearDley <510865496@qq.com>
+ *  Author: Dml <510865496@qq.com>
  *  Wechat：bugfixed
  *
  */

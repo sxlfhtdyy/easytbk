@@ -1,7 +1,7 @@
 <?php
 
 
-namespace YearDley\EasyTBK\TaoBao\Request;
+namespace Dml\EasyTBK\TaoBao\Request;
 
 
 class ItemcatsGetRequest
