@@ -7,7 +7,7 @@ use Dml\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.tbk.dg.newuser.order.sum request
  *
  * @author auto create
- * @since 1.0, 2018.07.20
+ * @since 1.0, 2019.07.04
  */
 class TbkDgNewuserOrderSumRequest
 {
@@ -122,15 +122,14 @@ class TbkDgNewuserOrderSumRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->activityId, "activityId");
-        RequestCheckUtil::checkNotNull ($this->pageNo, "pageNo");
-        RequestCheckUtil::checkNotNull ($this->pageSize, "pageSize");
-        RequestCheckUtil::checkMaxValue ($this->pageSize, 100, "pageSize");
-        RequestCheckUtil::checkMinValue ($this->pageSize, 1, "pageSize");
+        RequestCheckUtil::checkNotNull($this->activityId,"activityId");
+        RequestCheckUtil::checkNotNull($this->pageNo,"pageNo");
+        RequestCheckUtil::checkNotNull($this->pageSize,"pageSize");
+        RequestCheckUtil::checkMaxValue($this->pageSize,100,"pageSize");
+        RequestCheckUtil::checkMinValue($this->pageSize,1,"pageSize");
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }

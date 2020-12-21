@@ -7,7 +7,7 @@ use Dml\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.openuid.get.bytrade request
  *
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2018.10.17
  */
 class OpenuidGetBytradeRequest
 {
@@ -42,11 +42,10 @@ class OpenuidGetBytradeRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->tid, "tid");
+        RequestCheckUtil::checkNotNull($this->tid,"tid");
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }

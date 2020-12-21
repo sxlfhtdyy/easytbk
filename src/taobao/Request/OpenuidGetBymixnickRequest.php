@@ -7,7 +7,7 @@ use Dml\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.openuid.get.bymixnick request
  *
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2019.10.21
  */
 class OpenuidGetBymixnickRequest
 {
@@ -42,11 +42,10 @@ class OpenuidGetBymixnickRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->mixNick, "mixNick");
+        RequestCheckUtil::checkNotNull($this->mixNick,"mixNick");
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }

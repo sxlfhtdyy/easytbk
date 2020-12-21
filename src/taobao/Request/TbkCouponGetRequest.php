@@ -8,7 +8,7 @@ use Dml\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.tbk.coupon.get request
  *
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2020.10.08
  */
 class TbkCouponGetRequest
 {
@@ -77,9 +77,9 @@ class TbkCouponGetRequest
 
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }
 }
+

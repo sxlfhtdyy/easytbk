@@ -8,7 +8,7 @@ use Dml\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.appip.get request
  *
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2020.08.28
  */
 class AppipGetRequest
 {
@@ -30,9 +30,9 @@ class AppipGetRequest
 
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }
 }
+

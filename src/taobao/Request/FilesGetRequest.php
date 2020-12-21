@@ -75,12 +75,11 @@ class FilesGetRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull($this->endDate, "endDate");
-        RequestCheckUtil::checkNotNull($this->startDate, "startDate");
+        RequestCheckUtil::checkNotNull($this->endDate,"endDate");
+        RequestCheckUtil::checkNotNull($this->startDate,"startDate");
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }
