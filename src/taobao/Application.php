@@ -26,10 +26,14 @@ class Application
 
     protected $sdkVersion = "top-sdk-php-20180326";
 
-    public function __construct($appkey = "", $secretKey = "")
+    public function getAppkey()
     {
+        return $this->appkey;
+    }
+
+    public function __construct($appkey = "",$secretKey = ""){
         $this->appkey = $appkey;
-        $this->secretKey = $secretKey;
+        $this->secretKey = $secretKey ;
     }
 
     protected function generateSign($params)
@@ -37,8 +41,10 @@ class Application
         ksort($params);
 
         $stringToBeSigned = $this->secretKey;
-        foreach ($params as $k => $v) {
-            if (is_string($v) && "@" != substr($v, 0, 1)) {
+        foreach ($params as $k => $v)
+        {
+            if(!is_array($v) && "@" != substr($v, 0, 1))
+            {
                 $stringToBeSigned .= "$k$v";
             }
         }
@@ -60,33 +66,35 @@ class Application
         if ($this->connectTimeout) {
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
         }
-        curl_setopt($ch, CURLOPT_USERAGENT, "top-sdk-php");
+        curl_setopt ( $ch, CURLOPT_USERAGENT, "top-sdk-php" );
         //https 请求
-        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == "https") {
+        if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
 
-        if (is_array($postFields) && 0 < count($postFields)) {
+        if (is_array($postFields) && 0 < count($postFields))
+        {
             $postBodyString = "";
             $postMultipart = false;
-            foreach ($postFields as $k => $v) {
-                if (!is_string($v))
-                    continue;
-                if ("@" != substr($v, 0, 1))//判断是不是文件上传
+            foreach ($postFields as $k => $v)
+            {
+                if("@" != substr($v, 0, 1))//判断是不是文件上传
                 {
                     $postBodyString .= "$k=" . urlencode($v) . "&";
-                } else//文件上传用multipart/form-data，否则用www-form-urlencoded
+                }
+                else//文件上传用multipart/form-data，否则用www-form-urlencoded
                 {
                     $postMultipart = true;
-                    if (class_exists('\CURLFile')) {
+                    if(class_exists('\CURLFile')){
                         $postFields[$k] = new \CURLFile(substr($v, 1));
                     }
                 }
             }
             unset($k, $v);
             curl_setopt($ch, CURLOPT_POST, true);
-            if ($postMultipart) {
+            if ($postMultipart)
+            {
                 if (class_exists('\CURLFile')) {
                     curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
                 } else {
@@ -95,26 +103,31 @@ class Application
                     }
                 }
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
-            } else {
+            }
+            else
+            {
                 $header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString, 0, -1));
+                curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString,0,-1));
             }
         }
         $reponse = curl_exec($ch);
 
-        if (curl_errno($ch)) {
-            throw new \Exception(curl_error($ch), 0);
-        } else {
+        if (curl_errno($ch))
+        {
+            throw new Exception(curl_error($ch),0);
+        }
+        else
+        {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if (200 !== $httpStatusCode) {
-                throw new \Exception($reponse, $httpStatusCode);
+            if (200 !== $httpStatusCode)
+            {
+                throw new Exception($reponse,$httpStatusCode);
             }
         }
         curl_close($ch);
         return $reponse;
     }
-
     public function curl_with_memory_file($url, $postFields = null, $fileFields = null)
     {
         $ch = curl_init();
@@ -127,9 +140,9 @@ class Application
         if ($this->connectTimeout) {
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
         }
-        curl_setopt($ch, CURLOPT_USERAGENT, "top-sdk-php");
+        curl_setopt ( $ch, CURLOPT_USERAGENT, "top-sdk-php" );
         //https 请求
-        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == "https") {
+        if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
@@ -137,18 +150,18 @@ class Application
         $delimiter = '-------------' . uniqid();
         //先将post的普通数据生成主体字符串
         $data = '';
-        if ($postFields != null) {
+        if($postFields != null){
             foreach ($postFields as $name => $content) {
                 $data .= "--" . $delimiter . "\r\n";
                 $data .= 'Content-Disposition: form-data; name="' . $name . '"';
                 //multipart/form-data 不需要urlencode，参见 http:stackoverflow.com/questions/6603928/should-i-url-encode-post-data
                 $data .= "\r\n\r\n" . $content . "\r\n";
             }
-            unset($name, $content);
+            unset($name,$content);
         }
 
         //将上传的文件生成主体字符串
-        if ($fileFields != null) {
+        if($fileFields != null){
             foreach ($fileFields as $name => $file) {
                 $data .= "--" . $delimiter . "\r\n";
                 $data .= 'Content-Disposition: form-data; name="' . $name . '"; filename="' . $file['name'] . "\" \r\n";
@@ -156,13 +169,13 @@ class Application
 
                 $data .= $file['content'] . "\r\n";
             }
-            unset($name, $file);
+            unset($name,$file);
         }
         //主体结束的分隔符
         $data .= "--" . $delimiter . "--";
 
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        curl_setopt($ch, CURLOPT_HTTPHEADER , array(
                 'Content-Type: multipart/form-data; boundary=' . $delimiter,
                 'Content-Length: ' . strlen($data))
         );
@@ -172,25 +185,49 @@ class Application
         $reponse = curl_exec($ch);
         unset($data);
 
-        if (curl_errno($ch)) {
-            throw new \Exception(curl_error($ch), 0);
-        } else {
+        if (curl_errno($ch))
+        {
+            throw new Exception(curl_error($ch),0);
+        }
+        else
+        {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if (200 !== $httpStatusCode) {
-                throw new \Exception($reponse, $httpStatusCode);
+            if (200 !== $httpStatusCode)
+            {
+                throw new Exception($reponse,$httpStatusCode);
             }
         }
         curl_close($ch);
         return $reponse;
     }
 
-    public function execute($request, $session = null, $bestUrl = null)
+    protected function logCommunicationError($apiName, $requestUrl, $errorCode, $responseTxt)
     {
-        $result = new ResultSet();
-        if ($this->checkRequest) {
+        $localIp = isset($_SERVER["SERVER_ADDR"]) ? $_SERVER["SERVER_ADDR"] : "CLI";
+        $logger = new TopLogger;
+        $logger->conf["log_file"] = rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_comm_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
+        $logger->conf["separator"] = "^_^";
+        $logData = array(
+            date("Y-m-d H:i:s"),
+            $apiName,
+            $this->appkey,
+            $localIp,
+            PHP_OS,
+            $this->sdkVersion,
+            $requestUrl,
+            $errorCode,
+            str_replace("\n","",$responseTxt)
+        );
+        $logger->log($logData);
+    }
+
+    public function execute($request, $session = null,$bestUrl = null)
+    {
+        $result =  new ResultSet();
+        if($this->checkRequest) {
             try {
                 $request->check();
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
 
                 $result->code = $e->getCode();
                 $result->msg = $e->getMessage();
@@ -204,35 +241,35 @@ class Application
         $sysParams["sign_method"] = $this->signMethod;
         $sysParams["method"] = $request->getApiMethodName();
         $sysParams["timestamp"] = date("Y-m-d H:i:s");
-        if (null != $session) {
+        if (null != $session)
+        {
             $sysParams["session"] = $session;
         }
         $apiParams = array();
         //获取业务参数
         $apiParams = $request->getApiParas();
-        //过滤为空的参数
-        $apiParams = array_filter($apiParams, function ($val) {
-            return $val != null;
-        });
+
+
         //系统参数放入GET请求串
-        if ($bestUrl) {
-            $requestUrl = $bestUrl . "?";
+        if($bestUrl){
+            $requestUrl = $bestUrl."?";
             $sysParams["partner_id"] = $this->getClusterTag();
-        } else {
-            $requestUrl = $this->gatewayUrl . "?";
+        }else{
+            $requestUrl = $this->gatewayUrl."?";
             $sysParams["partner_id"] = $this->sdkVersion;
         }
         //签名
         $sysParams["sign"] = $this->generateSign(array_merge($apiParams, $sysParams));
 
-        foreach ($sysParams as $sysParamKey => $sysParamValue) {
+        foreach ($sysParams as $sysParamKey => $sysParamValue)
+        {
             // if(strcmp($sysParamKey,"timestamp") != 0)
             $requestUrl .= "$sysParamKey=" . urlencode($sysParamValue) . "&";
         }
 
         $fileFields = array();
         foreach ($apiParams as $key => $value) {
-            if (is_array($value) && array_key_exists('type', $value) && array_key_exists('content', $value)) {
+            if(is_array($value) && array_key_exists('type',$value) && array_key_exists('content',$value) ){
                 $value['name'] = $key;
                 $fileFields[$key] = $value;
                 unset($apiParams[$key]);
@@ -243,13 +280,17 @@ class Application
         $requestUrl = substr($requestUrl, 0, -1);
 
         //发起HTTP请求
-        try {
-            if (count($fileFields) > 0) {
+        try
+        {
+            if(count($fileFields) > 0){
                 $resp = $this->curl_with_memory_file($requestUrl, $apiParams, $fileFields);
-            } else {
+            }else{
                 $resp = $this->curl($requestUrl, $apiParams);
             }
-        } catch (\Exception $e) {
+        }
+        catch (Exception $e)
+        {
+            $this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
             $result->code = $e->getCode();
             $result->msg = $e->getMessage();
             return $result;
@@ -259,57 +300,74 @@ class Application
         unset($fileFields);
         //解析TOP返回结果
         $respWellFormed = false;
-        if ("json" == $this->format) {
+        if ("json" == $this->format)
+        {
             $respObject = json_decode($resp);
-            if (null !== $respObject) {
+            if (null !== $respObject)
+            {
                 $respWellFormed = true;
-                foreach ($respObject as $propKey => $propValue) {
+                foreach ($respObject as $propKey => $propValue)
+                {
                     $respObject = $propValue;
                 }
             }
-        } else if ("xml" == $this->format) {
+        }
+        else if("xml" == $this->format)
+        {
             $respObject = @simplexml_load_string($resp);
-            if (false !== $respObject) {
+            if (false !== $respObject)
+            {
                 $respWellFormed = true;
             }
         }
 
         //返回的HTTP文本不是标准JSON或者XML，记下错误日志
-        if (false === $respWellFormed) {
+        if (false === $respWellFormed)
+        {
+            $this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_RESPONSE_NOT_WELL_FORMED",$resp);
             $result->code = 0;
             $result->msg = "HTTP_RESPONSE_NOT_WELL_FORMED";
             return $result;
         }
 
         //如果TOP返回了错误码，记录到业务错误日志中
-        if (isset($respObject->code)) {
-
+        if (isset($respObject->code))
+        {
+            $logger = new TopLogger;
+            $logger->conf["log_file"] = rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_biz_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
+            $logger->log(array(
+                date("Y-m-d H:i:s"),
+                $resp
+            ));
         }
-
         return $respObject;
     }
 
     public function exec($paramsArray)
     {
-        if (!isset($paramsArray["method"])) {
+        if (!isset($paramsArray["method"]))
+        {
             trigger_error("No api name passed");
         }
         $inflector = new LtInflector;
         $inflector->conf["separator"] = ".";
         $requestClassName = ucfirst($inflector->camelize(substr($paramsArray["method"], 7))) . "Request";
-        if (!class_exists($requestClassName)) {
+        if (!class_exists($requestClassName))
+        {
             trigger_error("No such api: " . $paramsArray["method"]);
         }
 
         $session = isset($paramsArray["session"]) ? $paramsArray["session"] : null;
 
         $req = new $requestClassName;
-        foreach ($paramsArray as $paraKey => $paraValue) {
+        foreach($paramsArray as $paraKey => $paraValue)
+        {
             $inflector->conf["separator"] = "_";
             $setterMethodName = $inflector->camelize($paraKey);
             $inflector->conf["separator"] = ".";
             $setterMethodName = "set" . $inflector->camelize($setterMethodName);
-            if (method_exists($req, $setterMethodName)) {
+            if (method_exists($req, $setterMethodName))
+            {
                 $req->$setterMethodName($paraValue);
             }
         }
@@ -318,6 +376,6 @@ class Application
 
     private function getClusterTag()
     {
-        return substr($this->sdkVersion, 0, 11) . "-cluster" . substr($this->sdkVersion, 11);
+        return substr($this->sdkVersion,0,11)."-cluster".substr($this->sdkVersion,11);
     }
 }
