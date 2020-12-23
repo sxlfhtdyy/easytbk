@@ -290,7 +290,7 @@ class Application
         }
         catch (Exception $e)
         {
-            $this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
+            //$this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
             $result->code = $e->getCode();
             $result->msg = $e->getMessage();
             return $result;
@@ -324,7 +324,7 @@ class Application
         //返回的HTTP文本不是标准JSON或者XML，记下错误日志
         if (false === $respWellFormed)
         {
-            $this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_RESPONSE_NOT_WELL_FORMED",$resp);
+            //$this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_RESPONSE_NOT_WELL_FORMED",$resp);
             $result->code = 0;
             $result->msg = "HTTP_RESPONSE_NOT_WELL_FORMED";
             return $result;
@@ -333,12 +333,6 @@ class Application
         //如果TOP返回了错误码，记录到业务错误日志中
         if (isset($respObject->code))
         {
-            $logger = new TopLogger;
-            $logger->conf["log_file"] = rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_biz_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
-            $logger->log(array(
-                date("Y-m-d H:i:s"),
-                $resp
-            ));
         }
         return $respObject;
     }
