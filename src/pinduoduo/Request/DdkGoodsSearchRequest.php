@@ -104,6 +104,12 @@ class DdkGoodsSearchRequest implements RequestInterface
      */
     private $activityTags;
 
+    private $goodsSignList;
+
+
+    public function setGoodsSignList($goodsSignList) {
+        $this->goodsSignList  = $goodsSignList;
+    }
 
     public function setKeyWord($keyword)
     {
@@ -295,6 +301,7 @@ class DdkGoodsSearchRequest implements RequestInterface
             'range_list' => $this->rangeList,
             'cat_id' => $this->catId,
             'goods_id_list' => $this->goodsIdList,
+            'goods_sign_list' => $this->goodsSignList,
             'merchant_type' => $this->merchantType,
             'pid' => $this->pid,
             'custom_parameters' => $this->customParameters,
