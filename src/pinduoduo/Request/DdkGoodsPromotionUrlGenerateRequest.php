@@ -1,202 +1,233 @@
 <?php
 
-namespace Dml\EasyTBK\PinDuoDuo\Request;
+    namespace Dml\EasyTBK\PinDuoDuo\Request;
 
-use Dml\EasyTBK\PinDuoDuo\RequestInterface;
+    use Dml\EasyTBK\PinDuoDuo\RequestInterface;
 
 
-class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
-{
-
-    /**
-     * 生成普通商品推广链接
-     * @var string
-     */
-    private $type = 'pdd.ddk.goods.promotion.url.generate';
-
-    /**
-     * 推广位ID
-     * @var
-     */
-    private $pid;
-
-    /**
-     * 商品ID，仅支持单个查询
-     * @var
-     */
-    private $goodsIdList;
-
-    /**
-     * 是否生成短链接，true-是，false-否
-     * @var
-     */
-    private $generateShortUrl;
-
-    /**
-     * true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
-     * @var
-     */
-    private $multiGroup;
-
-    /**
-     * 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
-     * @var
-     */
-    private $customParameters;
-
-    /**
-     * 是否开启订单拉新，true表示开启（订单拉新奖励特权仅支持白名单，请联系工作人员开通）
-     * @var
-     */
-    private $pullNew;
-
-    /**
-     * 是否生成唤起微信客户端链接，true-是，false-否，默认false
-     * @var
-     */
-    private $generateWeappWebview;
-
-    /**
-     * 招商多多客ID
-     * @var
-     */
-    private $zsduoId;
-
-    /**
-     * 是否生成小程序推广
-     * @var
-     */
-    private $generateWeApp;
-
-    private $search_id;
-
-    protected $generate_authority_url;
-
-    /**
-     * @param mixed $generate_authority_url
-     */
-    public function setGenerateAuthorityUrl($generate_authority_url)
+    class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
     {
-        $this->generate_authority_url = $generate_authority_url;
+
+        /**
+         * 生成普通商品推广链接
+         * @var string
+         */
+        private $type = 'pdd.ddk.goods.promotion.url.generate';
+
+
+        /*
+         * @JsonProperty(String, "crash_gift_id")
+         */
+        private $crashGiftId;
+
+        /**
+         * @JsonProperty(String, "custom_parameters")
+         */
+        private $customParameters;
+
+        /**
+         * @JsonProperty(Boolean, "generate_authority_url")
+         */
+        private $generateAuthorityUrl;
+
+        /**
+         * @JsonProperty(Boolean, "generate_mall_collect_coupon")
+         */
+        private $generateMallCollectCoupon;
+
+        /**
+         * @JsonProperty(Boolean, "generate_qq_app")
+         */
+        private $generateQqApp;
+
+        /**
+         * @JsonProperty(Boolean, "generate_schema_url")
+         */
+        private $generateSchemaUrl;
+
+        /**
+         * @JsonProperty(Boolean, "generate_short_url")
+         */
+        private $generateShortUrl;
+
+        /**
+         * @JsonProperty(Boolean, "generate_weapp_webview")
+         */
+        private $generateWeappWebview;
+
+        /**
+         * @JsonProperty(Boolean, "generate_weiboapp_webview")
+         */
+        private $generateWeiboappWebview;
+
+        /**
+         * @JsonProperty(Boolean, "generate_we_app")
+         */
+        private $generateWeApp;
+
+        /**
+         * @JsonProperty(List<Long>, "goods_id_list")
+         */
+        private $goodsIdList;
+
+        /**
+         * @JsonProperty(String, "goods_sign")
+         */
+        private $goodsSign;
+
+        /**
+         * @JsonProperty(String, "goods_sign_list")
+         */
+        private $goodsSignList;
+
+        /**
+         * @JsonProperty(Boolean, "multi_group")
+         */
+        private $multiGroup;
+
+        /**
+         * @JsonProperty(String, "p_id")
+         */
+        private $pId;
+
+        /**
+         * @JsonProperty(List<String>, "room_id_list")
+         */
+        private $roomIdList;
+
+        /**
+         * @JsonProperty(String, "search_id")
+         */
+        private $searchId;
+
+        /**
+         * @JsonProperty(List<String>, "target_id_list")
+         */
+        private $targetIdList;
+
+        /**
+         * @JsonProperty(Long, "zs_duo_id")
+         */
+        private $zsDuoId;
+
+
+        public function setCrashGiftId($crashGiftId) {
+            $this->crashGiftId = $crashGiftId;
+        }
+
+        public function setCustomParameters($customParameters)
+        {
+            $this->customParameters = $customParameters;
+        }
+
+        public function setGenerateAuthorityUrl($generateAuthorityUrl)
+        {
+            $this->generateAuthorityUrl = $generateAuthorityUrl;
+        }
+
+        public function setGenerateMallCollectCoupon($generateMallCollectCoupon)
+        {
+            $this->generateMallCollectCoupon = $generateMallCollectCoupon;
+        }
+
+        public function setGenerateQqApp($generateQqApp)
+        {
+            $this->generateQqApp = $generateQqApp;
+        }
+
+        public function setGenerateSchemaUrl($generateSchemaUrl)
+        {
+            $this->generateSchemaUrl = $generateSchemaUrl;
+        }
+
+        public function setGenerateShortUrl($generateShortUrl)
+        {
+            $this->generateShortUrl = $generateShortUrl;
+        }
+
+        public function setGenerateWeappWebview($generateWeappWebview)
+        {
+            $this->generateWeappWebview = $generateWeappWebview;
+        }
+
+        public function setGenerateWeiboappWebview($generateWeiboappWebview)
+        {
+            $this->generateWeiboappWebview = $generateWeiboappWebview;
+        }
+
+        public function setGenerateWeApp($generateWeApp)
+        {
+            $this->generateWeApp = $generateWeApp;
+        }
+
+        public function setGoodsIdList($goodsIdList)
+        {
+            $this->goodsIdList = $goodsIdList;
+        }
+
+        public function setGoodsSign($goodsSign)
+        {
+            $this->goodsSign = $goodsSign;
+        }
+
+        public function setGoodsSignList($goodsSignList)
+        {
+            $this->goodsSignList = $goodsSignList;
+        }
+
+        public function setMultiGroup($multiGroup)
+        {
+            $this->multiGroup = $multiGroup;
+        }
+
+        public function setPId($pId)
+        {
+            $this->pId = $pId;
+        }
+
+        public function setRoomIdList($roomIdList)
+        {
+            $this->roomIdList = $roomIdList;
+        }
+
+        public function setSearchId($searchId)
+        {
+            $this->searchId = $searchId;
+        }
+
+        public function setTargetIdList($targetIdList)
+        {
+            $this->targetIdList = $targetIdList;
+        }
+
+        public function setZsDuoId($zsDuoId)
+        {
+            $this->zsDuoId = $zsDuoId;
+        }
+
+        public function getParams()
+        {
+            $params = [
+                'type' => $this->type,
+                'crash_gift_id' => $this->crashGiftId,
+                'custom_parameters' => $this->customParameters,
+                'generate_authority_url' => $this->generateAuthorityUrl,
+                'generate_mall_collect_coupon' => $this->generateMallCollectCoupon,
+                'generate_qq_app' => $this->generateQqApp,
+                'generate_schema_url' => $this->generateSchemaUrl,
+                'generate_short_url' => $this->generateShortUrl,
+                'generate_we_app' => $this->generateWeApp,
+                'goods_id_list' => $this->goodsIdList,
+                'goods_sign' => $this->goodsSign,
+                'goods_sign_list' => $this->goodsSignList,
+                'multi_group' => $this->multiGroup,
+                'multi_group' => $this->multiGroup,
+                'p_id' => $this->pId,
+                'room_id_list' => $this->roomIdList,
+                'search_id' => $this->searchId,
+                'target_id_list' => $this->targetIdList,
+                'zs_duo_id' => $this->zsDuoId,
+            ];
+            return array_filter($params);
+        }
     }
-
-
-    public function setPid($pid)
-    {
-        $this->pid = $pid;
-    }
-
-    public function getPid()
-    {
-        return $this->pid;
-    }
-
-    public function setGoodsIdList($goodsIdList)
-    {
-        $this->goodsIdList = $goodsIdList;
-    }
-
-    public function getGoodsIdList()
-    {
-        return $this->goodsIdList;
-    }
-
-    public function setGenerateShortUrl($generateShortUrl)
-    {
-        $this->generateShortUrl = $generateShortUrl;
-    }
-
-    public function getGenerateShortUrl()
-    {
-        return $this->generateShortUrl;
-    }
-
-    public function setMultiGroup($multiGroup)
-    {
-        $this->multiGroup = $multiGroup;
-    }
-
-    public function getMultiGroup()
-    {
-        return $this->multiGroup;
-    }
-
-    public function setCustomParameters($customParameters)
-    {
-        $this->customParameters = $customParameters;
-    }
-
-    public function getCustomParameters()
-    {
-        return $this->customParameters;
-    }
-
-    public function setPullNew($pullNew)
-    {
-        $this->pullNew = $pullNew;
-    }
-
-    public function getPullNew()
-    {
-        return $this->pullNew;
-    }
-
-    public function setGenerateWeappWebview($generateWeappWebview)
-    {
-        $this->generateWeappWebview = $generateWeappWebview;
-    }
-
-    public function getGenerateWeappWebview()
-    {
-        return $this->generateWeappWebview;
-    }
-
-    public function setZsduoId($zsduoId)
-    {
-        $this->zsduoId = $zsduoId;
-    }
-
-    public function getZsduoId()
-    {
-        return $this->zsduoId;
-    }
-
-    public function setGenerateWeApp($generateWeApp)
-    {
-        $this->generateWeApp = $generateWeApp;
-    }
-
-    public function getGenerateWeApp()
-    {
-        return $this->generateWeApp;
-    }
-
-    /**
-     * @param mixed $search_id
-     */
-    public function setSearchId($search_id)
-    {
-        $this->search_id = $search_id;
-    }
-
-
-    public function getParams()
-    {
-        $params = [
-            'type' => $this->type,
-            'p_id' => $this->pid,
-            'goods_id_list' => $this->goodsIdList,
-            'generate_short_url' => $this->generateShortUrl,
-            'multi_group' => $this->multiGroup,
-            'custom_parameters' => $this->customParameters,
-            'pull_new' => $this->pullNew,
-            'search_id' => $this->search_id,
-            'generate_weapp_webview' => $this->generateWeappWebview,
-            'zs_duo_id' => $this->zsduoId,
-            'generate_we_app' => $this->generateWeApp,
-            'generate_schema_url' => "true",
-            'generate_authority_url' => $this->generate_authority_url,
-        ];
-        return array_filter($params);
-    }
-}
