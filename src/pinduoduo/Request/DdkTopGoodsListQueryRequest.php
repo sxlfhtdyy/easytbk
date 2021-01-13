@@ -1,111 +1,90 @@
 <?php
 
-namespace Dml\EasyTBK\PinDuoDuo\Request;
+    namespace Dml\EasyTBK\PinDuoDuo\Request;
 
-use Dml\EasyTBK\PinDuoDuo\RequestInterface;
-
-
-class DdkTopGoodsListQueryRequest implements RequestInterface
-{
-    /**
-     * 获取热销商品列表
-     * @var string
-     */
-    private $type = 'pdd.ddk.top.goods.list.query';
-
-    /**
-     * 推广位ID
-     * @var
-     */
-    private $pid;
-
-    /**
-     * 默认值0，商品分页数
-     * @var
-     */
-    private $offset;
-
-    /**
-     * 默认400，每页商品数量
-     * @var
-     */
-    private $limit;
-
-    /**
-     * 排序方式:1-实时热销榜；2-实时收益榜
-     * @var
-     */
-    private $sortType;
+    use Dml\EasyTBK\PinDuoDuo\RequestInterface;
 
 
-    public function setSortType($sortType)
+    class DdkTopGoodsListQueryRequest implements RequestInterface
     {
-        $this->sortType = $sortType;
-    }
+        /**
+         * 获取热销商品列表
+         * @var string
+         */
+        private $type = 'pdd.ddk.top.goods.list.query';
 
-    public function getSortType()
-    {
-        return $this->sortType;
-    }
+        /**
+         * @JsonProperty(String, "custom_parameters")
+         */
+        private $customParameters;
 
-    /**
-     * @return mixed
-     */
-    public function getPid()
-    {
-        return $this->pid;
-    }
+        /**
+         * @JsonProperty(Integer, "limit")
+         */
+        private $limit;
 
-    /**
-     * @param mixed $pid
-     */
-    public function setPid($pid)
-    {
-        $this->pid = $pid;
-    }
+        /**
+         * @JsonProperty(String, "list_id")
+         */
+        private $listId;
 
-    /**
-     * @return mixed
-     */
-    public function getOffset()
-    {
-        return $this->offset;
-    }
+        /**
+         * @JsonProperty(Integer, "offset")
+         */
+        private $offset;
 
-    /**
-     * @param mixed $offset
-     */
-    public function setOffset($offset)
-    {
-        $this->offset = $offset;
-    }
+        /**
+         * @JsonProperty(String, "p_id")
+         */
+        private $pId;
 
-    /**
-     * @return mixed
-     */
-    public function getLimit()
-    {
-        return $this->limit;
-    }
+        /**
+         * @JsonProperty(Integer, "sort_type")
+         */
+        private $sortType;
 
-    /**
-     * @param mixed $limit
-     */
-    public function setLimit($limit)
-    {
-        $this->limit = $limit;
-    }
+        public function setCustomParameters($customParameters)
+        {
+            $this->customParameters = $customParameters;
+        }
 
-    public function getParams()
-    {
-        $params = [
-            'type' => $this->type,
-            'p_id' => $this->pid,
-            'offset' => $this->offset,
-            'sort_type' => $this->sortType,
-            'limit' => $this->limit,
-        ];
+        public function setLimit($limit)
+        {
+            $this->limit = $limit;
+        }
 
-        return array_filter($params);
+        public function setListId($listId)
+        {
+            $this->listId = $listId;
+        }
+
+        public function setOffset($offset)
+        {
+            $this->offset = $offset;
+        }
+
+        public function setPId($pId)
+        {
+            $this->pId = $pId;
+        }
+
+        public function setSortType($sortType)
+        {
+            $this->sortType = $sortType;
+        }
+
+        public function getParams()
+        {
+            $params = [
+                'type' => $this->type,
+                'limit' => $this->limit,
+                'list_id' => $this->listId,
+                'offset' => $this->offset,
+                'p_id' => $this->pId,
+                'sort_type' => $this->sortType,
+                'custom_parameters' => $this->customParameters,
+            ];
+
+            return array_filter($params);
+        }
     }
-}
