@@ -122,6 +122,10 @@ class DdkMallUrlGenRequest implements RequestInterface
             'multi_group' => $this->multiGroup,
             'custom_parameters' => $this->customParameters,
         ];
-        return array_filter($params);
+        return array_filter($params, function ($v) {
+            if ($v || $v === false) {
+                return true;
+            }
+        });
     }
 }

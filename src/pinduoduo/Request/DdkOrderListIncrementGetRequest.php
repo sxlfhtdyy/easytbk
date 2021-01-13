@@ -96,6 +96,10 @@
                 'query_order_type' => $this->queryOrderType,
                 'return_count' => $this->returnCount
             ];
-            return array_filter($params);
+            return array_filter($params, function ($v) {
+                if ($v || $v === false) {
+                    return true;
+                }
+            });
         }
     }

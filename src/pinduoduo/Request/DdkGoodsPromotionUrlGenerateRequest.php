@@ -228,6 +228,10 @@
                 'target_id_list' => $this->targetIdList,
                 'zs_duo_id' => $this->zsDuoId,
             ];
-            return array_filter($params);
+            return array_filter($params, function ($v) {
+                if ($v || $v === false) {
+                    return true;
+                }
+            });
         }
     }

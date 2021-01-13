@@ -144,6 +144,10 @@
                 'amount' => $this->amount,
                 'scratch_card_amount' => $this->scratchCardAmount,
             ];
-            return array_filter($params);
+            return array_filter($params, function ($v) {
+                if ($v || $v === false) {
+                    return true;
+                }
+            });
         }
     }

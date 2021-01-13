@@ -310,6 +310,10 @@ class DdkGoodsSearchRequest implements RequestInterface
             'activity_tags' => $this->activityTags,
         ];
 
-        return array_filter($params);
+        return array_filter($params, function ($v) {
+            if ($v || $v === false) {
+                return true;
+            }
+        });
     }
 }

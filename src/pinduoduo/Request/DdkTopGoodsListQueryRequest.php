@@ -85,6 +85,10 @@
                 'custom_parameters' => $this->customParameters,
             ];
 
-            return array_filter($params);
+            return array_filter($params, function ($v) {
+                if ($v || $v === false) {
+                    return true;
+                }
+            });
         }
     }

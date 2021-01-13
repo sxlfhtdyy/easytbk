@@ -86,7 +86,7 @@
 
         public function getParams()
         {
-            return [
+            $params =  [
                 'type' => $this->type,
                 'goods_id_list' => $this->goodsIdList,
                 'goods_sign' => $this->goodsSign,
@@ -95,5 +95,11 @@
                 'search_id' => $this->searchId,
                 'zs_duo_id' => $this->zsDuoId,
             ];
+
+            return array_filter($params, function ($v) {
+                if ($v || $v === false) {
+                    return true;
+                }
+            });
         }
     }

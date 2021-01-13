@@ -89,6 +89,10 @@
                 'start_time' => $this->startTime,
                 'cash_gift_order' => $this->cashGiftOrder,
             ];
-            return array_filter($params);
+            return array_filter($params, function ($v) {
+                if ($v || $v === false) {
+                    return true;
+                }
+            });
         }
     }
