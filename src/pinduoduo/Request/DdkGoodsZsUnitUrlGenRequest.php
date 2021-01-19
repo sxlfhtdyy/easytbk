@@ -1,59 +1,57 @@
 <?php
 
-namespace Dml\EasyTBK\PinDuoDuo\Request;
+    namespace Dml\EasyTBK\PinDuoDuo\Request;
 
-use Dml\EasyTBK\PinDuoDuo\RequestInterface;
-
-
-class DdkGoodsZsUnitUrlGenRequest implements RequestInterface
-{
-
-    /**
-     * 生成普通商品推广链接
-     * @var string
-     */
-    private $type = 'pdd.ddk.goods.zs.unit.url.gen';
-
-    /**
-     * 推广位ID
-     * @var
-     */
-    private $pid;
-
-    /**
-     * 商品ID，仅支持单个查询
-     * @var
-     */
-    private $source_url;
+    use Dml\EasyTBK\PinDuoDuo\RequestInterface;
 
 
-    public function setPid($pid)
+    class DdkGoodsZsUnitUrlGenRequest implements RequestInterface
     {
-        $this->pid = $pid;
-    }
 
-    public function getPid()
-    {
-        return $this->pid;
-    }
+        /**
+         * 生成普通商品推广链接
+         * @var string
+         */
+        private $type = 'pdd.ddk.goods.zs.unit.url.gen';
 
-    public function setSourceUrl($source_url)
-    {
-        $this->source_url = $source_url;
-    }
+        /**
+         * @JsonProperty(String, "pid")
+         */
+        private $pid;
 
-    public function getSourceUrl()
-    {
-        return $this->source_url;
-    }
+        /**
+         * @JsonProperty(String, "source_url")
+         */
+        private $sourceUrl;
 
-    public function getParams()
-    {
-        $params = [
-            'type' => $this->type,
-            'pid' => $this->pid,
-            'source_url' => $this->source_url,
-        ];
-        return array_filter($params);
+        /**
+         * @JsonProperty(String, "custom_parameters")
+         */
+        private $customParameters;
+
+
+        public function setPid($pid)
+        {
+            $this->pid = $pid;
+        }
+
+        public function setSourceUrl($sourceUrl)
+        {
+            $this->sourceUrl = $sourceUrl;
+        }
+
+        public function setCustomParameters($customParameters)
+        {
+            $this->customParameters = $customParameters;
+        }
+        public function getParams()
+        {
+            $params = [
+                'type' => $this->type,
+                'pid' => $this->pid,
+                'source_url' => $this->sourceUrl,
+                'custom_parameters' => $this->customParameters
+            ];
+            return array_filter($params);
+        }
     }
-}
