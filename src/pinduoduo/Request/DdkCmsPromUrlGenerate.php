@@ -121,10 +121,6 @@
                 'multi_group' => $this->multiGroup,
                 'p_id_list' => $this->pidList,
             ];
-            return array_filter($params, function ($v) {
-                if ($v || $v === false) {
-                    return true;
-                }
-            });
+            return $params;
         }
     }
